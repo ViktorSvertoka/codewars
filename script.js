@@ -50,3 +50,11 @@ function litres(time) {
   const roundedLiters = Math.floor(liters);
   return roundedLiters;
 }
+
+//----------------------------------------------------------------------------------------------------------
+
+// Make a simple function called greet that returns the most-famous "hello world!".
+
+function greet() {
+  return 'hello world!';
+}
