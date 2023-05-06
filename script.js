@@ -58,3 +58,22 @@ function litres(time) {
 function greet() {
   return 'hello world!';
 }
+
+const teamLead = [
+  'Viktor Svertoka',
+  'Yevhenii Lukashov',
+  'Dmytro Samus',
+  'Vitalii Bashchenko',
+  'Volodymyr Zhyvun',
+  'Mariia Ivanova',
+  'Sergiy Yevchihen',
+  'Nikita Slabushevskiy',
+  'Ihor Kulinskyi',
+  'Kirill Litovchenko',
+];
+
+teamLead.sort();
+
+console.log(teamLead);
+
+//---------------------------------------------------------------------------------------------------------------
