@@ -227,3 +227,15 @@ console.log(min([5])); // 5
 console.log(max([5])); // 5
 
 //----------------------------------------------------------------------------------------------------------------
+
+// Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
+
+class Kata {
+  static getVolumeOfCuboid(length, width, height) {
+    return length * width * height;
+  }
+}
+
+console.log(Kata.getVolumeOfCuboid(2, 3, 4)); // 24
+console.log(Kata.getVolumeOfCuboid(1, 1, 1)); // 1
+console.log(Kata.getVolumeOfCuboid(5, 5, 5)); // 125
