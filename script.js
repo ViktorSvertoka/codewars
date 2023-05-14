@@ -192,23 +192,38 @@ console.log(setAlarm(true, false));
 // Notes
 // You may consider that there will not be any empty arrays/vectors.
 
-function findMinMax(list) {
-  let min = list[0];
-  let max = list[0];
+function min(list) {
+  let minValue = list[0];
 
   for (let i = 1; i < list.length; i++) {
-    if (list[i] < min) {
-      min = list[i];
-    } else if (list[i] > max) {
-      max = list[i];
+    if (list[i] < minValue) {
+      minValue = list[i];
     }
   }
 
-  return { min, max };
+  return minValue;
 }
 
-// Примеры использования функции:
-console.log(findMinMax([4, 6, 2, 1, 9, 63, -134, 566])); // { min: -134, max: 566 }
-console.log(findMinMax([-52, 56, 30, 29, -54, 0, -110])); // { min: -110, max: 56 }
-console.log(findMinMax([42, 54, 65, 87, 0])); // { min: 0, max: 87 }
-console.log(findMinMax([5])); // { min: 5, max: 5 }
+function max(list) {
+  let maxValue = list[0];
+
+  for (let i = 1; i < list.length; i++) {
+    if (list[i] > maxValue) {
+      maxValue = list[i];
+    }
+  }
+
+  return maxValue;
+}
+
+// Примеры использования функций:
+console.log(min([4, 6, 2, 1, 9, 63, -134, 566])); // -134
+console.log(max([4, 6, 2, 1, 9, 63, -134, 566])); // 566
+console.log(min([-52, 56, 30, 29, -54, 0, -110])); // -110
+console.log(max([-52, 56, 30, 29, -54, 0, -110])); // 56
+console.log(min([42, 54, 65, 87, 0])); // 0
+console.log(max([42, 54, 65, 87, 0])); // 87
+console.log(min([5])); // 5
+console.log(max([5])); // 5
+
+//----------------------------------------------------------------------------------------------------------------
