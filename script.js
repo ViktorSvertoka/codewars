@@ -378,3 +378,123 @@ console.log(addBinary(1, 1)); // Output: "10"
 console.log(addBinary(5, 9)); // Output: "1110"
 
 //-------------------------------------------------------------------------------------------------------------------
+
+// There is a bus moving in the city which takes and drops some people at each bus stop.
+
+// You are provided with a list (or array) of integer pairs. Elements of each pair represent the number of people that get on the bus (the first item) and the number of people that get off the bus (the second item) at a bus stop.
+
+// Your task is to return the number of people who are still on the bus after the last bus stop (after the last array). Even though it is the last bus stop, the bus might not be empty and some people might still be inside the bus, they are probably sleeping there :D
+
+// Take a look on the test cases.
+
+// Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
+
+// The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
+
+const number = function (busStops) {
+  let totalPeople = 0;
+
+  for (let i = 0; i < busStops.length; i++) {
+    const [getOn, getOff] = busStops[i];
+    totalPeople += getOn - getOff;
+  }
+
+  return totalPeople;
+};
+
+console.log(
+  number([
+    [3, 0],
+    [4, 1],
+    [10, 2],
+    [2, 3],
+  ]),
+); // Output: 11
+console.log(
+  number([
+    [5, 0],
+    [3, 2],
+    [2, 1],
+  ]),
+); // Output: 7
+console.log(
+  number([
+    [0, 0],
+    [0, 0],
+    [0, 0],
+  ]),
+); // Output: 0
+
+//-------------------------------------------------------------------------------------------------------------------
+
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+
+// Array can contain numbers or strings. X can be either.
+
+// Return true if the array contains the value, false if not.
+
+function check(a, x) {
+  return a.includes(x);
+}
+
+console.log(check([1, 2, 3, 4, 5], 3)); // Output: true
+console.log(check(['apple', 'banana', 'orange'], 'pear')); // Output: false
+console.log(check([true, false, true], false)); // Output: true
+
+//-------------------------------------------------------------------------------------------------------------------
+
+// Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+
+// Note: input will never be an empty string
+
+function fakeBin(x) {
+  return x.replace(/[0-4]/g, '0').replace(/[5-9]/g, '1');
+}
+
+console.log(fakeBin('0123456789')); // Output: '0000011111'
+console.log(fakeBin('123456789')); // Output: '0000011111'
+console.log(fakeBin('9876543210')); // Output: '1111100000'
+
+//-------------------------------------------------------------------------------------------------------------------
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+// Examples
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str) {
+  return str
+    .split(' ')
+    .map(word => word.split('').reverse().join(''))
+    .join(' ');
+}
+
+console.log(reverseWords('This is an example!')); // Output: "sihT si na !elpmaxe"
+console.log(reverseWords('double  spaces')); // Output: "elbuod  secaps"
+console.log(reverseWords('Hello World')); // Output: "olleH dlroW"
+
+//-------------------------------------------------------------------------------------------------------------------
+
+// Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+// Examples:
+// Input: 42145 Output: 54421
+
+// Input: 145263 Output: 654321
+
+// Input: 123456789 Output: 987654321
+
+function descendingOrder(n) {
+  return parseInt(
+    n
+      .toString()
+      .split('')
+      .sort((a, b) => b - a)
+      .join(''),
+  );
+}
+
+console.log(descendingOrder(42145)); // Output: 54421
+console.log(descendingOrder(145263)); // Output: 654321
+console.log(descendingOrder(123456789)); // Output: 987654321
