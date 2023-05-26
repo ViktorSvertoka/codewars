@@ -498,3 +498,59 @@ function descendingOrder(n) {
 console.log(descendingOrder(42145)); // Output: 54421
 console.log(descendingOrder(145263)); // Output: 654321
 console.log(descendingOrder(123456789)); // Output: 987654321
+
+//--------------------------------------------------------------------------------------------------------------------
+
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+// For example,
+
+// [true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]
+// The correct answer would be 17.
+
+// Hint: Don't forget to check for bad values like null/undefined
+
+function countSheeps(arrayOfSheep) {
+  let count = 0;
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    if (arrayOfSheep[i] === true) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Example usage
+const arrayOfSheep = [
+  true,
+  true,
+  true,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  false,
+  true,
+  true,
+];
+const sheepCount = countSheeps(arrayOfSheep);
+console.log(sheepCount); // Output: 17
