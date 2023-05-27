@@ -581,3 +581,22 @@ console.log(makeNegative(1)); // Output: -1
 console.log(makeNegative(-5)); // Output: -5
 console.log(makeNegative(0)); // Output: 0
 console.log(makeNegative(0.12)); // Output: -0.12
+
+//---------------------------------------------------------------------------------------------------------------
+
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+function simpleMultiplication(number) {
+  if (number % 2 === 0) {
+    return number * 8;
+  } else {
+    return number * 9;
+  }
+}
+
+// Testing the function
+console.log(simpleMultiplication(2)); // Output: 16 (even number, multiplied by 8)
+console.log(simpleMultiplication(3)); // Output: 27 (odd number, multiplied by 9)
+console.log(simpleMultiplication(0)); // Output: 0 (even number, multiplied by 8)
+console.log(simpleMultiplication(-4)); // Output: -32 (even number, multiplied by 8)
+console.log(simpleMultiplication(-7)); // Output: -63 (odd number, multiplied by 9)
