@@ -600,3 +600,18 @@ console.log(simpleMultiplication(3)); // Output: 27 (odd number, multiplied by 9
 console.log(simpleMultiplication(0)); // Output: 0 (even number, multiplied by 8)
 console.log(simpleMultiplication(-4)); // Output: -32 (even number, multiplied by 8)
 console.log(simpleMultiplication(-7)); // Output: -63 (odd number, multiplied by 9)
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Complete the solution so that it reverses the string passed into it.
+
+// 'world'  =>  'dlrow'
+// 'word'   =>  'drow'
+
+function solution(str) {
+  return str.split('').reverse().join('');
+}
+
+// Testing the function
+console.log(solution('world')); // Output: 'dlrow'
+console.log(solution('word')); // Output: 'drow'
