@@ -697,3 +697,30 @@ function sum(numbers) {
 }
 
 //---------------------------------------------------------------------------------------------------------------
+
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+// Return True if you're better, else False!
+
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+function betterThanAverage(classPoints, yourPoints) {
+  // Calculate the sum of all class points, including your own points
+  const totalPoints =
+    classPoints.reduce((sum, points) => sum + points, 0) + yourPoints;
+
+  // Calculate the average by dividing the total points by the number of students (including yourself)
+  const average = totalPoints / (classPoints.length + 1);
+
+  // Compare your score with the average and return the result
+  return yourPoints > average;
+}
+
+const classPoints = [80, 90, 70, 85];
+const yourPoints = 95;
+
+console.log(betterThanAverage(classPoints, yourPoints)); // Output: true
