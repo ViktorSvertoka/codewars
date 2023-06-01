@@ -771,3 +771,21 @@ console.log(nbYear(1500, 5, 100, 5000)); // Output: 15
 console.log(nbYear(1500000, 2.5, 10000, 2000000)); // Output: 10
 
 //---------------------------------------------------------------------------------------------------------------
+
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+
+// Return true if yes, false otherwise :)
+
+function hero(bullets, dragons) {
+  var totalBulletsNeeded = dragons * 2;
+  if (bullets >= totalBulletsNeeded) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(hero(10, 5)); // Output: true (hero will survive)
+console.log(hero(6, 4)); // Output: false (hero will not survive)
+
+//---------------------------------------------------------------------------------------------------------------
