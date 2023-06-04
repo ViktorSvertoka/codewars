@@ -832,3 +832,34 @@ function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
 console.log(goals(5, 10, 2)); // Output: 17
 
 //---------------------------------------------------------------------------------------------------------------
+
+// This time no story, no theory. The examples below show you how to write function accum:
+
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+function accum(s) {
+  // Create an array to store the parts of the resulting string
+  const result = [];
+
+  // Loop through each character in the input string
+  for (let i = 0; i < s.length; i++) {
+    // Repeat the current character i+1 times and convert it to lowercase
+    const part = s[i].toUpperCase() + s[i].toLowerCase().repeat(i);
+
+    // Add the part to the result array
+    result.push(part);
+  }
+
+  // Join the parts with "-" as the separator and return the resulting string
+  return result.join('-');
+}
+
+console.log(accum('abcd')); // Output: "A-Bb-Ccc-Dddd"
+console.log(accum('RqaEzty')); // Output: "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+console.log(accum('cwAt')); // Output: "C-Ww-Aaa-Tttt"
+
+//---------------------------------------------------------------------------------------------------------------
