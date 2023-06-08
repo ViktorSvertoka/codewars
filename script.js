@@ -1088,3 +1088,56 @@ console.log(binaryArrayToNumber([1, 1, 1, 1])); // Output: 15
 console.log(binaryArrayToNumber([1, 0, 1, 1])); // Output: 11
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Count the number of Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text) {
+  let charCount = {};
+  let count = 0;
+
+  // Convert the input text to lowercase for case-insensitive comparison
+  let lowercaseText = text.toLowerCase();
+
+  // Iterate over each character in the lowercase text
+  for (let i = 0; i < lowercaseText.length; i++) {
+    let char = lowercaseText[i];
+
+    // If the character is a letter or digit
+    if (/[a-z0-9]/.test(char)) {
+      // If the character is not in the charCount object, initialize its count to 0
+      if (!charCount[char]) {
+        charCount[char] = 0;
+      }
+
+      // Increment the count of the character and check if it's the second occurrence
+      if (charCount[char] === 1) {
+        count++;
+      }
+
+      // Increment the count of the character
+      charCount[char]++;
+    }
+  }
+
+  return count;
+}
+
+console.log(duplicateCount('abcde')); // 0
+console.log(duplicateCount('aabbcde')); // 2
+console.log(duplicateCount('aabBcde')); // 2
+console.log(duplicateCount('indivisibility')); // 1
+console.log(duplicateCount('Indivisibilities')); // 2
+console.log(duplicateCount('aA11')); // 2
+console.log(duplicateCount('ABBA')); // 2
+
+//---------------------------------------------------------------------------------------------------------------
