@@ -1141,3 +1141,20 @@ console.log(duplicateCount('aA11')); // 2
 console.log(duplicateCount('ABBA')); // 2
 
 //---------------------------------------------------------------------------------------------------------------
+
+// The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+
+// For example:
+
+// 1.08 --> 30
+// Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
+
+function cockroachSpeed(s) {
+  // Convert km/h to cm/s by multiplying by 100,000 and dividing by 3600
+  const speedCmPerSec = Math.floor((s * 100000) / 3600);
+  return speedCmPerSec;
+}
+
+console.log(cockroachSpeed(1.08)); // Output: 30
+
+//---------------------------------------------------------------------------------------------------------------
