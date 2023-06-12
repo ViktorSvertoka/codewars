@@ -1228,3 +1228,24 @@ let tower6Floors = towerBuilder(6);
 console.log(tower6Floors);
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+// Example:
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+// None of the arrays will be empty, so you don't have to worry about that!
+
+function removeEveryOther(arr) {
+  return arr.filter(function (_, index) {
+    return index % 2 === 0;
+  });
+}
+
+let array = ['Keep', 'Remove', 'Keep', 'Remove', 'Keep', 'Remove'];
+let result = removeEveryOther(array);
+console.log(result);
+
+['Keep', 'Keep', 'Keep'];
+
+//---------------------------------------------------------------------------------------------------------------
