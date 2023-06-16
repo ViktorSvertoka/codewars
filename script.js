@@ -1603,3 +1603,18 @@ console.log(digPow(695, 2)); // Output: 2
 console.log(digPow(46288, 3)); // Output: 51
 
 //---------------------------------------------------------------------------------------------------------------
+
+// You ask a small girl,"How old are you?" She always says, "x years old", where x is a random number between 0 and 9.
+
+// Write a program that returns the girl's age (0-9) as an integer.
+
+// Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
+
+function getAge(inputString) {
+  return parseInt(inputString); // Parse the input string to an integer and return it
+}
+
+console.log(getAge('1 year old')); // Output: 1
+console.log(getAge('5 years old')); // Output: 5
+
+//---------------------------------------------------------------------------------------------------------------
