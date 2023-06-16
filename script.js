@@ -1618,3 +1618,36 @@ console.log(getAge('1 year old')); // Output: 1
 console.log(getAge('5 years old')); // Output: 5
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+function XO(str) {
+  let countX = 0;
+  let countO = 0;
+
+  for (let char of str) {
+    if (char.toLowerCase() === 'x') {
+      countX++;
+    } else if (char.toLowerCase() === 'o') {
+      countO++;
+    }
+  }
+
+  return countX === countO; // Return true if the counts of 'x' and 'o' are equal, otherwise return false
+}
+
+console.log(XO('ooxx')); // Output: true
+console.log(XO('xooxx')); // Output: false
+console.log(XO('ooxXm')); // Output: true
+console.log(XO('zpzpzpp')); // Output: true
+console.log(XO('zzoo')); // Output: false
+
+//---------------------------------------------------------------------------------------------------------------
