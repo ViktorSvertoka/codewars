@@ -1699,3 +1699,64 @@ console.log(printerError('aaabbbbhaijjjm')); // Output: 0/14
 console.log(printerError('aaaxbbbbyyhwawiwjjjwwm')); // Output: 8/22
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+// Rules for a smiling face:
+
+// Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+// A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+// Every smiling face must have a smiling mouth that should be marked with either ) or D
+// No additional characters are allowed except for those mentioned.
+
+// Valid smiley face examples: :) :D ;-D :~)
+// Invalid smiley faces: ;( :> :} :]
+
+// Example
+// countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+// countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+// countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
+// Note
+// In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+
+function countSmileys(arr) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    const face = arr[i];
+    if (isValidSmiley(face)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+function isValidSmiley(face) {
+  const validEyes = [':', ';'];
+  const validNoses = ['-', '~'];
+  const validMouths = [')', 'D'];
+
+  if (face.length === 2) {
+    const eyes = face[0];
+    const mouth = face[1];
+    return validEyes.includes(eyes) && validMouths.includes(mouth);
+  } else if (face.length === 3) {
+    const eyes = face[0];
+    const nose = face[1];
+    const mouth = face[2];
+    return (
+      validEyes.includes(eyes) &&
+      validNoses.includes(nose) &&
+      validMouths.includes(mouth)
+    );
+  }
+
+  return false;
+}
+
+console.log(countSmileys([':)', ';(', ';}', ':-D'])); // Output: 2
+console.log(countSmileys([';D', ':-(', ':-)', ';~)'])); // Output: 3
+console.log(countSmileys([';]', ':[', ';*', ':$', ';-D'])); // Output: 1
+
+//---------------------------------------------------------------------------------------------------------------
