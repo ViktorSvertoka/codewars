@@ -1993,3 +1993,28 @@ function switchItUp(number) {
 }
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+// Example
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+
+function solution(string) {
+  let result = '';
+
+  for (let i = 0; i < string.length; i++) {
+    let currentChar = string[i];
+
+    if (currentChar === currentChar.toUpperCase()) {
+      result += ' ';
+    }
+
+    result += currentChar;
+  }
+
+  return result;
+}
+
+//---------------------------------------------------------------------------------------------------------------
