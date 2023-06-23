@@ -2038,3 +2038,36 @@ function positiveSum(arr) {
 }
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function that checks if a given string (case insensitive) is a palindrome. A palindrome is a word, number, phrase, or other sequence of symbols that reads the same backwards as forwards, such as madam or racecar, the date and time 12/21/33 12:21, and the sentence: "A man, a plan, a canal – Panama".
+
+function isPalindrome(x) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const sanitizedString = x.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  // Compare characters from beginning and end of the string
+  for (let i = 0; i < sanitizedString.length / 2; i++) {
+    if (
+      sanitizedString[i] !== sanitizedString[sanitizedString.length - 1 - i]
+    ) {
+      return false; // Characters don't match, not a palindrome
+    }
+  }
+
+  return true; // All characters match, it's a palindrome
+}
+
+//---------------------------------------------------------------------------------------------------------------
+
+// You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
+
+// Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+// Function should return true if it is possible and false if not.
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  const maxDistance = mpg * fuelLeft;
+  return maxDistance >= distanceToPump;
+};
+
+//---------------------------------------------------------------------------------------------------------------
