@@ -2220,3 +2220,45 @@ let birds = [
 console.log(gooseFilter(birds));
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write Number in Expanded Form
+// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+// NOTE: All numbers will be whole numbers greater than 0.
+
+// If you liked this kata, check out part 2!!
+
+function expandedForm(num) {
+  // Convert the number to a string
+  const numStr = num.toString();
+
+  // Initialize an empty array to store the expanded form
+  const expanded = [];
+
+  // Iterate through each digit in the number
+  for (let i = 0; i < numStr.length; i++) {
+    // Get the current digit
+    const digit = parseInt(numStr[i]);
+
+    // If the digit is not zero, add it to the expanded form
+    if (digit !== 0) {
+      // Calculate the place value by multiplying the digit with the appropriate power of 10
+      const placeValue = digit * Math.pow(10, numStr.length - i - 1);
+
+      // Add the place value to the expanded form
+      expanded.push(placeValue);
+    }
+  }
+
+  // Return the expanded form as a string by joining the elements with ' + '
+  return expanded.join(' + ');
+}
+
+console.log(expandedForm(12)); // Output: '10 + 2'
+console.log(expandedForm(42)); // Output: '40 + 2'
+console.log(expandedForm(70304)); // Output: '70000 + 300 + 4'
+
+//---------------------------------------------------------------------------------------------------------------
