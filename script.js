@@ -2262,3 +2262,33 @@ console.log(expandedForm(42)); // Output: '40 + 2'
 console.log(expandedForm(70304)); // Output: '70000 + 300 + 4'
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+// You can assume that all values are integers. Do not mutate the input array/list.
+
+function invert(array) {
+  // Create a new array to store the inverted values
+  const invertedArray = [];
+
+  // Iterate through each number in the array
+  for (let i = 0; i < array.length; i++) {
+    // Invert the sign of the number by multiplying it with -1
+    const invertedNumber = array[i] * -1;
+
+    // Add the inverted number to the new array
+    invertedArray.push(invertedNumber);
+  }
+
+  // Return the inverted array
+  return invertedArray;
+}
+
+console.log(invert([1, 2, 3, 4, 5])); // Output: [-1, -2, -3, -4, -5]
+console.log(invert([1, -2, 3, -4, 5])); // Output: [-1, 2, -3, 4, -5]
+console.log(invert([])); // Output: []
+
+//---------------------------------------------------------------------------------------------------------------
