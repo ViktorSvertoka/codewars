@@ -2315,3 +2315,11 @@ console.log(domainName('http://www.zombie-bites.com')); // Output: "zombie-bites
 console.log(domainName('https://www.cnet.com')); // Output: "cnet"
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function which converts the input string to uppercase.
+
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
+
+//---------------------------------------------------------------------------------------------------------------
