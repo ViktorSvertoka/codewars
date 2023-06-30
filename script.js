@@ -2323,3 +2323,24 @@ function makeUpperCase(str) {
 }
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+// Examples
+// "hello"     -->  "hll"
+// "codewars"  -->  "cdwrs"
+// "goodbye"   -->  "gdby"
+// "HELLO"     -->  "HELLO"
+// don't worry about uppercase vowels
+// y is not considered a vowel for this kata
+
+function shortcut(string) {
+  return string.replace(/[aeiou]/g, '');
+}
+
+console.log(shortcut('hello')); // Output: "hll"
+console.log(shortcut('codewars')); // Output: "cdwrs"
+console.log(shortcut('goodbye')); // Output: "gdby"
+console.log(shortcut('HELLO')); // Output: "HELLO"
+
+//---------------------------------------------------------------------------------------------------------------
