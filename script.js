@@ -2402,3 +2402,20 @@ console.log(finder.findSmallestInt([34, 15, 88, 2])); // Output: 2
 console.log(finder.findSmallestInt([34, -345, -1, 100])); // Output: -345
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function which calculates the average of the numbers in a given list.
+
+// Note: Empty arrays should return 0.
+
+function findAverage(array) {
+  if (array.length === 0) {
+    return 0; // Return 0 for an empty array
+  }
+
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]; // Accumulate the sum of all numbers in the array
+  }
+
+  return sum / array.length; // Divide the sum by the count to get the average
+}
