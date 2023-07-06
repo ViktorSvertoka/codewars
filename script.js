@@ -2583,3 +2583,27 @@ console.log(howMuchILoveYou(8)); // Output: "a little"
 console.log(howMuchILoveYou(12)); // Output: "passionately"
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Given an array of integers, return a new array with each value doubled.
+
+// For example:
+
+// [1, 2, 3] --> [2, 4, 6]
+
+function maps(x) {
+  let doubledArray = []; // Create an empty array to store the doubled values
+
+  for (let i = 0; i < x.length; i++) {
+    let doubledValue = x[i] * 2; // Double the value at index i
+    doubledArray.push(doubledValue); // Add the doubled value to the new array
+  }
+
+  return doubledArray; // Return the new array with doubled values
+}
+
+// Example usage:
+let inputArray = [1, 2, 3];
+let resultat = maps(inputArray);
+console.log(result); // Output: [2, 4, 6]
+
+//---------------------------------------------------------------------------------------------------------------
