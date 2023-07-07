@@ -2626,3 +2626,27 @@ console.log(quarterOf(6)); // Output: 2
 console.log(quarterOf(11)); // Output: 4
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Instructions
+// Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+// Example
+// Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+
+let capitals = function (word) {
+  let indexes = []; // Create an empty array to store the indexes of capital letters
+
+  for (let i = 0; i < word.length; i++) {
+    let char = word[i];
+    if (char >= 'A' && char <= 'Z') {
+      indexes.push(i); // Add the index of the capital letter to the array
+    }
+  }
+
+  return indexes; // Return the array of indexes
+};
+
+// Example usage:
+console.log(capitals('CodEWaRs')); // Output: [0, 3, 4, 6]
+
+//---------------------------------------------------------------------------------------------------------------
