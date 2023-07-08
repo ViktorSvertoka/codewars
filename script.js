@@ -2650,3 +2650,29 @@ let capitals = function (word) {
 console.log(capitals('CodEWaRs')); // Output: [0, 3, 4, 6]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function that returns a string in which firstname is swapped with last name.
+
+// Example(Input --> Output)
+
+// "john McClane" --> "McClane john"
+
+function nameShuffler(str) {
+  const nameArray = str.split(' '); // Split the string into an array of words
+  const firstName = nameArray[0]; // Get the first name
+  const lastName = nameArray[1]; // Get the last name
+
+  // Swap the first name with the last name
+  nameArray[0] = lastName;
+  nameArray[1] = firstName;
+
+  const shuffledName = nameArray.join(' '); // Join the array back into a string
+
+  return shuffledName;
+}
+
+const fullName = 'John McClane';
+const shuffledName = nameShuffler(fullName);
+console.log(shuffledName); // Output: McClane John
+
+//---------------------------------------------------------------------------------------------------------------
