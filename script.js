@@ -72,3 +72,21 @@ console.log(xor(false, true)); // Output: true
 console.log(xor(true, true)); // Output: false
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Build a function that returns an array of integers from n to 1 where n>0.
+
+// Example : n=5 --> [5,4,3,2,1]
+
+const reverseSeq = n => {
+  const result = [];
+  for (let i = n; i >= 1; i--) {
+    result.push(i);
+  }
+  return result;
+};
+
+console.log(reverseSeq(5)); // Output: [5, 4, 3, 2, 1]
+console.log(reverseSeq(10)); // Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(reverseSeq(1)); // Output: [1]
+
+//---------------------------------------------------------------------------------------------------------------
