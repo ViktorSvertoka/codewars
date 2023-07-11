@@ -90,3 +90,47 @@ console.log(reverseSeq(10)); // Output: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 console.log(reverseSeq(1)); // Output: [1]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// The first input array is the key to the correct answers to an exam, like ["a", "a", "b", "d"]. The second one contains a student's submitted answers.
+
+// The two arrays are not empty and are the same length. Return the score for this array of answers, giving +4 for each correct answer, -1 for each incorrect answer, and +0 for each blank answer, represented as an empty string (in C the space character is used).
+
+// If the score < 0, return 0.
+
+// For example:
+
+// checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]) → 6
+// checkExam(["a", "a", "c", "b"], ["a", "a", "b",  ""]) → 7
+// checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]) → 16
+// checkExam(["b", "c", "b", "a"], ["",  "a", "a", "c"]) → 0
+
+function checkExam(array1, array2) {
+  let score = 0;
+
+  for (let i = 0; i < array1.length; i++) {
+    if (array2[i] === '') {
+      // Blank answer, no points deducted
+      score += 0;
+    } else if (array1[i] === array2[i]) {
+      // Correct answer, 4 points awarded
+      score += 4;
+    } else {
+      // Incorrect answer, 1 point deducted
+      score -= 1;
+    }
+  }
+
+  // If the score is negative, return 0
+  if (score < 0) {
+    return 0;
+  }
+
+  return score;
+}
+
+console.log(checkExam(['a', 'a', 'b', 'b'], ['a', 'c', 'b', 'd'])); // Output: 6
+console.log(checkExam(['a', 'a', 'c', 'b'], ['a', 'a', 'b', ''])); // Output: 7
+console.log(checkExam(['a', 'a', 'b', 'c'], ['a', 'a', 'b', 'c'])); // Output: 16
+console.log(checkExam(['b', 'c', 'b', 'a'], ['', 'a', 'a', 'c'])); // Output: 0
+
+//---------------------------------------------------------------------------------------------------------------
