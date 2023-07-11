@@ -134,3 +134,16 @@ console.log(checkExam(['a', 'a', 'b', 'c'], ['a', 'a', 'b', 'c'])); // Output: 1
 console.log(checkExam(['b', 'c', 'b', 'a'], ['', 'a', 'a', 'c'])); // Output: 0
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Implement a function which convert the given boolean value into its string representation.
+
+// Note: Only valid inputs will be given.
+
+function booleanToString(b) {
+  return b.toString();
+}
+
+console.log(booleanToString(true)); // Output: "true"
+console.log(booleanToString(false)); // Output: "false"
+
+//---------------------------------------------------------------------------------------------------------------
