@@ -257,3 +257,39 @@ let reversedList2 = reverseList(list2);
 console.log(reversedList2); // Output: [7, 0, 2, 9]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+
+// For example (Input --> Output):
+
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+// 999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+// 4 --> 0 (because 4 is already a one-digit number)
+
+function multiplyDigits(num) {
+  // Перетворюємо число на рядок і розбиваємо його на масив символів
+  const digits = String(num).split('');
+
+  // Перемножуємо всі цифри
+  return digits.reduce((acc, digit) => acc * Number(digit), 1);
+}
+
+function persistence(num) {
+  // Кількість кроків, яку ми зробили для отримання однозначного числа
+  let steps = 0;
+
+  // Повторюємо, поки число не стане однозначним
+  while (num >= 10) {
+    num = multiplyDigits(num);
+    steps++;
+  }
+
+  return steps;
+}
+
+// Приклади
+console.log(persistence(39)); // 3
+console.log(persistence(999)); // 4
+console.log(persistence(4)); // 0
+
+//---------------------------------------------------------------------------------------------------------------
