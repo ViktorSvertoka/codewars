@@ -353,3 +353,30 @@ console.log(isAnagram('Hello', 'World')); // false
 console.log(isAnagram('Listen', 'Silent')); // true
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let count = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(getCount('hello')); // 2 (e and o are vowels)
+console.log(getCount('world')); // 1 (o is a vowel)
+console.log(getCount('programming')); // 3 (o, a, and i are vowels)
+console.log(getCount('')); // 0 (empty string)
+console.log(getCount('This is a test')); // 4 (i, i, a, and e are vowels)
+
+//---------------------------------------------------------------------------------------------------------------
