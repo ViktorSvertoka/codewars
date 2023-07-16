@@ -293,3 +293,63 @@ console.log(persistence(999)); // 4
 console.log(persistence(4)); // 0
 
 //---------------------------------------------------------------------------------------------------------------
+
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+// Note: For 4 or more names, the number in "and 2 others" simply increases.
+
+function likes(names) {
+  const count = names.length;
+
+  if (count === 0) {
+    return 'no one likes this';
+  } else if (count === 1) {
+    return `${names[0]} likes this`;
+  } else if (count === 2) {
+    return `${names[0]} and ${names[1]} like this`;
+  } else if (count === 3) {
+    return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+  } else {
+    return `${names[0]}, ${names[1]} and ${count - 2} others like this`;
+  }
+}
+
+console.log(likes([])); // "no one likes this"
+console.log(likes(['Peter'])); // "Peter likes this"
+console.log(likes(['Jacob', 'Alex'])); // "Jacob and Alex like this"
+console.log(likes(['Max', 'John', 'Mark'])); // "Max, John and Mark like this"
+console.log(likes(['Alex', 'Jacob', 'Mark', 'Max'])); // "Alex, Jacob and 2 others like this"
+console.log(likes(['Alice', 'Bob', 'Charlie', 'David', 'Eve'])); // "Alice, Bob and 3 others like this"
+
+//---------------------------------------------------------------------------------------------------------------
+
+// An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+
+// Note: anagrams are case insensitive
+
+// Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+// Examples
+// "foefet" is an anagram of "toffee"
+
+// "Buckethead" is an anagram of "DeathCubeK"
+
+let isAnagram = function (test, original) {
+  const normalizeString = str => str.toLowerCase().split('').sort().join('');
+
+  return normalizeString(test) === normalizeString(original);
+};
+
+console.log(isAnagram('foefet', 'toffee')); // true
+console.log(isAnagram('Buckethead', 'DeathCubeK')); // true
+console.log(isAnagram('Hello', 'World')); // false
+console.log(isAnagram('Listen', 'Silent')); // true
+
+//---------------------------------------------------------------------------------------------------------------
