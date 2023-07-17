@@ -380,3 +380,45 @@ console.log(getCount('')); // 0 (empty string)
 console.log(getCount('This is a test')); // 4 (i, i, a, and e are vowels)
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Numbers ending with zeros are boring.
+
+// They might be fun in your world, but not here.
+
+// Get rid of them. Only the ending ones.
+
+// 1450 -> 145
+// 960000 -> 96
+// 1050 -> 105
+// -1050 -> -105
+// Zero alone is fine, don't worry about it. Poor guy anyway
+
+function noBoringZeros(n) {
+  // Convert the number to a string to easily manipulate it
+  let numStr = n.toString();
+
+  // Check if the number is zero or if it doesn't have any trailing zeros
+  if (n === 0 || !numStr.endsWith('0')) {
+    return n;
+  }
+
+  // Loop through the string from the end and remove trailing zeros
+  for (let i = numStr.length - 1; i >= 0; i--) {
+    if (numStr.charAt(i) === '0') {
+      numStr = numStr.slice(0, -1); // Remove the last character (trailing zero)
+    } else {
+      break; // Stop when a non-zero digit is found
+    }
+  }
+
+  // Convert the modified string back to a number and return
+  return parseInt(numStr, 10);
+}
+
+console.log(noBoringZeros(1450)); // Output: 145
+console.log(noBoringZeros(960000)); // Output: 96
+console.log(noBoringZeros(1050)); // Output: 105
+console.log(noBoringZeros(-1050)); // Output: -105
+console.log(noBoringZeros(0)); // Output: 0
+
+//---------------------------------------------------------------------------------------------------------------
