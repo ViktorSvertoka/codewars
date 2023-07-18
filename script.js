@@ -422,3 +422,34 @@ console.log(noBoringZeros(-1050)); // Output: -105
 console.log(noBoringZeros(0)); // Output: 0
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Description:
+// Remove an exclamation mark from the end of a string. For a beginner kata, you can assume that the input data is always a string, no need to verify it.
+
+// Examples
+// remove("Hi!") == "Hi"
+// remove("Hi!!!") == "Hi!!"
+// remove("!Hi") == "!Hi"
+// remove("!Hi!") == "!Hi"
+// remove("Hi! Hi!") == "Hi! Hi"
+// remove("Hi") == "Hi"
+
+function remove(string) {
+  // Check if the last character of the string is an exclamation mark
+  if (string.charAt(string.length - 1) === '!') {
+    // If it is, remove it using slice() method
+    return string.slice(0, -1);
+  } else {
+    // If the last character is not an exclamation mark, return the original string
+    return string;
+  }
+}
+
+console.log(remove('Hi!')); // Output: "Hi"
+console.log(remove('Hi!!!')); // Output: "Hi!!"
+console.log(remove('!Hi')); // Output: "!Hi"
+console.log(remove('!Hi!')); // Output: "!Hi"
+console.log(remove('Hi! Hi!')); // Output: "Hi! Hi"
+console.log(remove('Hi')); // Output: "Hi"
+
+//---------------------------------------------------------------------------------------------------------------
