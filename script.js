@@ -555,3 +555,15 @@ console.log(gimme([2, 3, 1])); // Output: 0
 console.log(gimme([5, 10, 14])); // Output: 1
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+  return s.replace(/!/g, '');
+}
+
+console.log(removeExclamationMarks('Hello, World!')); // Output: "Hello, World"
+console.log(removeExclamationMarks('No more exclamation marks!!')); // Output: "No more exclamation marks"
+console.log(removeExclamationMarks('Wow!!!')); // Output: "Wow"
+
+//---------------------------------------------------------------------------------------------------------------
