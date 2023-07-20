@@ -567,3 +567,35 @@ console.log(removeExclamationMarks('No more exclamation marks!!')); // Output: "
 console.log(removeExclamationMarks('Wow!!!')); // Output: "Wow"
 
 //---------------------------------------------------------------------------------------------------------------
+
+// You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+
+// As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+// Example (Input --> Output)
+
+// "Hello World" --> "World Hello"
+// "Hi There." --> "There. Hi"
+// Happy coding!
+
+function reverse(string) {
+  // Trim leading and trailing spaces
+  string = string.trim();
+
+  // Split the string into an array of words using spaces as a delimiter
+  const wordsArray = string.split(/\s+/);
+
+  // Reverse the array of words
+  const reversedArray = wordsArray.reverse();
+
+  // Join the reversed array back into a string using spaces as a separator
+  const reversedString = reversedArray.join(' ');
+
+  return reversedString;
+}
+
+// Test cases
+console.log(reverse('Hello World')); // Output: "World Hello"
+console.log(reverse('Hi There.')); // Output: "There. Hi"
+
+//---------------------------------------------------------------------------------------------------------------
