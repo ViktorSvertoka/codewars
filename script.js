@@ -666,3 +666,30 @@ function otherAngle(a, b) {
 }
 
 //---------------------------------------------------------------------------------------------------------------
+
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  const result = {};
+
+  // Loop through each character in the string
+  for (let char of string) {
+    // Check if the character is already a key in the result object
+    if (result[char]) {
+      // If it is, increment its count by 1
+      result[char]++;
+    } else {
+      // If it's not, add it as a key with the count of 1
+      result[char] = 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(count('aba')); // Output: { 'a': 2, 'b': 1 }
+console.log(count('')); // Output: {}
+
+//---------------------------------------------------------------------------------------------------------------
