@@ -696,12 +696,12 @@ console.log(count('')); // Output: {}
 
 // Complete the function which converts hex number (given as a string) to a decimal number.
 
-function hexToDecimal(hexString) {
+function hexToDec(hexString) {
   return parseInt(hexString, 16);
 }
 
-console.log(hexToDecimal('1A')); // Output: 26
-console.log(hexToDecimal('FF')); // Output: 255
-console.log(hexToDecimal('10')); // Output: 16
+console.log(hexToDec('1A')); // Output: 26
+console.log(hexToDec('FF')); // Output: 255
+console.log(hexToDec('10')); // Output: 16
 
 //---------------------------------------------------------------------------------------------------------------
