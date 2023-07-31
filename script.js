@@ -803,3 +803,27 @@ console.log(SeriesSum(2)); // Output: "1.25"
 console.log(SeriesSum(5)); // Output: "1.57"
 
 //---------------------------------------------------------------------------------------------------------------
+
+// The wide-mouth frog is particularly interested in the eating habits of other creatures.
+
+// He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
+
+// When he meets the alligator, it then makes a tiny mouth.
+
+// Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
+
+function mouthSize(animal) {
+  // Convert the animal string to lowercase for case-insensitive comparison
+  const lowercaseAnimal = animal.toLowerCase();
+
+  // Check if the animal is an alligator
+  if (lowercaseAnimal === 'alligator') {
+    return 'small';
+  } else {
+    return 'wide';
+  }
+}
+
+console.log(mouthSize('hippo')); // Output: "wide"
+console.log(mouthSize('AlliGator')); // Output: "small"
+console.log(mouthSize('elephant')); // Output: "wide"
