@@ -827,3 +827,27 @@ function mouthSize(animal) {
 console.log(mouthSize('hippo')); // Output: "wide"
 console.log(mouthSize('AlliGator')); // Output: "small"
 console.log(mouthSize('elephant')); // Output: "wide"
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Your function takes two arguments:
+
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  // Step 1: Calculate the age difference between father and son
+  const ageDifference = dadYearsOld - sonYearsOld;
+
+  // Step 2: Determine whether father was older or younger than twice the age of his son
+  if (ageDifference >= sonYearsOld) {
+    // Step 3: Father was older than twice his son's age
+    return ageDifference - sonYearsOld;
+  } else {
+    // Step 4: Father was younger than twice his son's age
+    return sonYearsOld - ageDifference;
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------
