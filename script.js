@@ -883,3 +883,16 @@ console.log(mergeArrays([1, 3, 5, 7, 9], [10, 8, 6, 4, 2])); // Output: [1, 2, 3
 console.log(mergeArrays([1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12])); // Output: [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Now you have to write a function that takes an argument and returns the square of it.
+
+function square(number) {
+  return number * number;
+}
+
+// Example usage:
+const inputNumber = 5;
+const squaredNumber = square(inputNumber);
+console.log(`The square of ${inputNumber} is ${squaredNumber}`);
+
+//---------------------------------------------------------------------------------------------------------------
