@@ -1,86 +1,33 @@
-// Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+// Grade book
+// Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
 
-// The Task
-// Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
-// Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
-// The Database
-// english: 'Welcome',
-// czech: 'Vitejte',
-// danish: 'Velkomst',
-// dutch: 'Welkom',
-// estonian: 'Tere tulemast',
-// finnish: 'Tervetuloa',
-// flemish: 'Welgekomen',
-// french: 'Bienvenue',
-// german: 'Willkommen',
-// irish: 'Failte',
-// italian: 'Benvenuto',
-// latvian: 'Gaidits',
-// lithuanian: 'Laukiamas',
-// polish: 'Witamy',
-// spanish: 'Bienvenido',
-// swedish: 'Valkommen',
-// welsh: 'Croeso'
-// Possible invalid inputs include:
+// Numerical Score	Letter Grade
+// 90 <= score <= 100	'A'
+// 80 <= score < 90	'B'
+// 70 <= score < 80	'C'
+// 60 <= score < 70	'D'
+// 0 <= score < 60	'F'
+// Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
 
-// IP_ADDRESS_INVALID - not a valid ipv4 or ipv6 ip address
-// IP_ADDRESS_NOT_FOUND - ip address not in the database
-// IP_ADDRESS_REQUIRED - no ip address was supplied
+function getGrade(s1, s2, s3) {
+  const average = (s1 + s2 + s3) / 3;
 
-function greet(language) {
-  const languageDatabase = {
-    english: 'Welcome',
-    czech: 'Vitejte',
-    danish: 'Velkomst',
-    dutch: 'Welkom',
-    estonian: 'Tere tulemast',
-    finnish: 'Tervetuloa',
-    flemish: 'Welgekomen',
-    french: 'Bienvenue',
-    german: 'Willkommen',
-    irish: 'Failte',
-    italian: 'Benvenuto',
-    latvian: 'Gaidits',
-    lithuanian: 'Laukiamas',
-    polish: 'Witamy',
-    spanish: 'Bienvenido',
-    swedish: 'Valkommen',
-    welsh: 'Croeso',
-  };
-
-  // Check if the provided language exists in the database
-  if (language && languageDatabase.hasOwnProperty(language.toLowerCase())) {
-    return languageDatabase[language.toLowerCase()];
+  if (average >= 90 && average <= 100) {
+    return 'A';
+  } else if (average >= 80 && average < 90) {
+    return 'B';
+  } else if (average >= 70 && average < 80) {
+    return 'C';
+  } else if (average >= 60 && average < 70) {
+    return 'D';
   } else {
-    // Return the default English greeting if the language is not found or invalid
-    return languageDatabase.english;
+    return 'F';
   }
 }
 
-//---------------------------------------------------------------------------------------------------------------
-
-// Write function bmi that calculates body mass index (bmi = weight / height2).
-
-// if bmi <= 18.5 return "Underweight"
-
-// if bmi <= 25.0 return "Normal"
-
-// if bmi <= 30.0 return "Overweight"
-
-// if bmi > 30 return "Obese"
-
-function bmi(weight, height) {
-  const bmiValue = weight / (height * height);
-
-  if (bmiValue <= 18.5) {
-    return 'Underweight';
-  } else if (bmiValue <= 25.0) {
-    return 'Normal';
-  } else if (bmiValue <= 30.0) {
-    return 'Overweight';
-  } else {
-    return 'Obese';
-  }
-}
+// Test cases
+console.log(getGrade(90, 85, 95)); // Output: 'A'
+console.log(getGrade(75, 80, 78)); // Output: 'C'
+console.log(getGrade(55, 45, 50)); // Output: 'F'
 
 //---------------------------------------------------------------------------------------------------------------
