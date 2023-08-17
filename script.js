@@ -87,3 +87,22 @@ console.log(filter_list([1, 'a', 'b', 0, 15])); // Output: [1,0,15]
 console.log(filter_list([1, 2, 'aasf', '1', '123', 123])); // Output: [1,2,123]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+// If the function is passed a valid PIN string, return true, else return false.
+
+// Examples (Input --> Output)
+// "1234"   -->  true
+// "12345"  -->  false
+// "
+
+function validatePIN(pin) {
+  return /^(\d{4}|\d{6})$/.test(pin);
+}
+
+console.log(validatePIN('1234')); // Output: true
+console.log(validatePIN('12345')); // Output: false
+console.log(validatePIN('a234')); // Output: false
+
+//---------------------------------------------------------------------------------------------------------------
