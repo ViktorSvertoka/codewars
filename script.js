@@ -106,3 +106,33 @@ console.log(validatePIN('12345')); // Output: false
 console.log(validatePIN('a234')); // Output: false
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Define a function that removes duplicates from an array of non negative numbers and returns it as a result.
+
+// The order of the sequence has to stay the same.
+
+// Examples:
+
+// Input -> Output
+// [1, 1, 2] -> [1, 2]
+// [1, 2, 1, 1, 3, 2] -> [1, 2, 3]
+
+function distinct(a) {
+  const result = [];
+  const seen = new Set();
+
+  for (const item of a) {
+    if (!seen.has(item)) {
+      result.push(item);
+      seen.add(item);
+    }
+  }
+
+  return result;
+}
+
+// Test cases
+console.log(distinct([1, 1, 2])); // Output: [1, 2]
+console.log(distinct([1, 2, 1, 1, 3, 2])); // Output: [1, 2, 3]
+
+//---------------------------------------------------------------------------------------------------------------
