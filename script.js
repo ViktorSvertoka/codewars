@@ -136,3 +136,21 @@ console.log(distinct([1, 1, 2])); // Output: [1, 2]
 console.log(distinct([1, 2, 1, 1, 3, 2])); // Output: [1, 2, 3]
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Complete the function/method so that it returns the url with anything after the anchor (#) removed.
+
+// Examples
+// "www.codewars.com#about" --> "www.codewars.com"
+// "www.codewars.com?page=1" -->"www.codewars.com?page=1"
+
+function removeUrlAnchor(url) {
+  const anchorIndex = url.indexOf('#'); // Find the index of #
+
+  // If # is found, remove everything after it, otherwise return the original URL
+  return anchorIndex !== -1 ? url.substring(0, anchorIndex) : url;
+}
+
+console.log(removeUrlAnchor('www.codewars.com#about')); // Output: "www.codewars.com"
+console.log(removeUrlAnchor('www.codewars.com?page=1')); // Output: "www.codewars.com?page=1"
+
+//---------------------------------------------------------------------------------------------------------------
