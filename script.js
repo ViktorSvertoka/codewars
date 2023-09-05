@@ -154,3 +154,14 @@ console.log(removeUrlAnchor('www.codewars.com#about')); // Output: "www.codewars
 console.log(removeUrlAnchor('www.codewars.com?page=1')); // Output: "www.codewars.com?page=1"
 
 //---------------------------------------------------------------------------------------------------------------
+
+function sayHello(name, city, state) {
+  const fullName = name.join(' '); // Join the name array into a single string with spaces
+  return `Hello, ${fullName}! Welcome to ${city}, ${state}!`;
+}
+
+// Example usage:
+const greeting = sayHello(['John', 'Smith'], 'Phoenix', 'Arizona');
+console.log(greeting); // Output: Hello, John Smith! Welcome to Phoenix, Arizona!
+
+//---------------------------------------------------------------------------------------------------------------
