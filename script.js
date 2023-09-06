@@ -165,3 +165,30 @@ const greeting = sayHello(['John', 'Smith'], 'Phoenix', 'Arizona');
 console.log(greeting); // Output: Hello, John Smith! Welcome to Phoenix, Arizona!
 
 //---------------------------------------------------------------------------------------------------------------
+
+// Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+// The output should be two capital letters with a dot separating them.
+
+// It should look like this:
+
+// Sam Harris => S.H
+
+// patrick feeney => P.F
+
+function abbrevName(name) {
+  // Split the name into an array of words using space as the delimiter
+  const words = name.split(' ');
+
+  // Get the first character of each word and convert it to uppercase
+  const initials = words.map(word => word[0].toUpperCase());
+
+  // Join the initials with a dot and return the result
+  return initials.join('.');
+}
+
+// Test cases
+console.log(abbrevName('Sam Harris')); // Output: 'S.H'
+console.log(abbrevName('patrick feeney')); // Output: 'P.F'
+
+//---------------------------------------------------------------------------------------------------------------
