@@ -126,18 +126,18 @@ console.log('counter-->', counter);
 const people1 = [
   {
     name: 'Alex',
-    know: ['Eva', 'Jhon'],
+    know: ['Eva', 'John'],
   },
   {
     name: 'Ivan',
-    know: ['Jhon', 'Alex'],
+    know: ['John', 'Alex'],
   },
   {
     name: 'Eva',
-    know: ['Alex', 'Jhon'],
+    know: ['Alex', 'John'],
   },
   {
-    name: 'Jhon',
+    name: 'John',
     know: ['Alex'],
   },
 ]; //Not found
@@ -145,10 +145,10 @@ const people1 = [
 const people2 = [
   {
     name: 'Alex',
-    know: ['Eva', 'Jhon'],
+    know: ['Eva', 'John'],
   },
   {
-    name: 'Jhon',
+    name: 'John',
     know: [],
   },
   {
@@ -157,28 +157,28 @@ const people2 = [
   },
   {
     name: 'Ivan',
-    know: ['Jhon', 'Alex'],
+    know: ['John', 'Alex'],
   },
 ]; // Not found
 
 const people3 = [
   {
     name: 'Alex',
-    know: ['Eva', 'Jhon'],
+    know: ['Eva', 'John'],
   },
   {
-    name: 'Jhon',
+    name: 'John',
     know: [],
   },
   {
     name: 'Eva',
-    know: ['Alex', 'Jhon'],
+    know: ['Alex', 'John'],
   },
   {
     name: 'Ivan',
-    know: ['Jhon', 'Alex'],
+    know: ['John', 'Alex'],
   },
-]; // Jhon
+]; // John
 
 function getNarcissus(arr) {
   const filteredItems = arr.filter(({ know }) => !know.length); // know.length === 0
@@ -210,7 +210,7 @@ const cars = [
   },
   {
     car: 'BMW',
-    type: '5 siries',
+    type: '5 sires',
     price: 9000,
   },
   {
