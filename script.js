@@ -1,72 +1,238 @@
-// A pangram is a sentence that contains every single letter of the alphabet at least once.
-// For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A - Z at least once(case is irrelevant).
-// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+// let newDiv = document.createElement('h1');
 
-function isPangram(string) {
-  string = string.toLowerCase();
+// newDiv.innerHTML = 'Hi!';
 
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  const letterFound = Array(26).fill(false);
+// document.body.appendChild(newDiv);
 
-  for (let i = 0; i < string.length; i++) {
-    const char = string.charAt(i);
+// console.log(newDiv.innerHTML);
+// console.error(newDiv.innerHTML);
+// console.warn(newDiv.innerHTML);
 
-    if (/[a-z]/.test(char)) {
-      const index = alphabet.indexOf(char);
-      letterFound[index] = true;
+//---------------------------------------------------------------------------------------------------------------
+
+// Створити функцію яка буде приймати 2 параметра.
+// 1 Масив студентів.
+// 2 Мову програмування яку потрібно знайти.
+// Функція повертає масив імен користувачів які вивчають цю мову.
+
+const students = [
+  {
+    name: `Den`,
+    language: `html`,
+  },
+  {
+    name: `Petro`,
+    language: `css`,
+  },
+  {
+    name: `Egor`,
+    language: `js`,
+  },
+  {
+    name: `Max`,
+    language: `html`,
+  },
+  {
+    name: `Olga`,
+    language: `css`,
+  },
+  {
+    name: `Kate`,
+    language: `js`,
+  },
+  {
+    name: `Ivan`,
+    language: `html`,
+  },
+];
+
+// Створюємо функцію
+// Відфільтрувати масив Filter
+// Перебрати масив Map
+
+const getUsersByLanguage = (users, language) => {
+  //   const filteredUsers = users.filter(user => user.language === language);
+  // const names = filteredUsers.map(user => user.name);
+
+  return users
+    .filter(user => user.language === language)
+    .map(user => user.name);
+};
+
+console.log(getUsersByLanguage(students, 'js'));
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Створити функцію яка приймає 1 параметр масив продуктів і повертає мутований масив
+// Потрібно перебрати масив і якщо він має об'єкти в яких дублюються айді то квонтіті цих елементів потрібно сплюсувати
+// а ті обє'кти в яких айді співпав видалити з масиву.
+// (Потрібно мутувати масив, створювати новий не потрібно)
+const products = [
+  {
+    id: 'sku1',
+    qty: 1,
+  },
+  {
+    id: 'sku2',
+    qty: 2,
+  },
+  {
+    id: 'sku3',
+    qty: 3,
+  },
+  {
+    id: 'sku1',
+    qty: 6,
+  },
+  {
+    id: 'sku1',
+    qty: 8,
+  },
+  {
+    id: 'sku2',
+    qty: 19,
+  },
+];
+let counter = 0;
+// for (let i = 0; i < products.length; i += 1) {
+//   for (let j = products.length - 1; i < j; j -= 1) {
+//     if (products[i].id === products[j].id) {
+//       products[i].qty += products[j].qty;
+//       products.splice(j, 1);
+//     }
+//     counter += 1;
+//   }
+// }
+console.time('start');
+for (let i = 0; i < products.length; i += 1) {
+  for (let j = i + 1; j < products.length; j += 1) {
+    if (products[i].id === products[j].id) {
+      products[i].qty += products[j].qty;
+      products.splice(j, 1);
+      j -= 1;
     }
+    counter += 1;
   }
-
-  return letterFound.every(found => found);
 }
-
-console.log(isPangram('The quick brown fox jumps over the lazy dog'));
-console.log(isPangram('Hello, World!'));
+console.timeEnd('start');
+// console.log("products-->", products);
+// start: 0.31494140625 ms
+console.log('counter-->', counter);
 
 //---------------------------------------------------------------------------------------------------------------
 
-// ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet.
-// ROT13 is an example of the Caesar cipher.
-// Create a function that takes a string and returns the string ciphered with Rot13.
-// If there are numbers or special characters included in the string, they should be returned as they are.
-// Only letters from the latin / english alphabet should be shifted, like in the original Rot13 "implementation".
+// Створити функцію яка буде шукати нарциса. Головна умова нарциса знають всі, нарцис не знає нікого.
 
-function rot13(message) {
-  let result = '';
+const people1 = [
+  {
+    name: 'Alex',
+    know: ['Eva', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Alex'],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: ['Alex'],
+  },
+]; //Not found
 
-  for (let i = 0; i < message.length; i++) {
-    let char = message[i];
+const people2 = [
+  {
+    name: 'Alex',
+    know: ['Eva', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: [],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Alex'],
+  },
+]; // Not found
 
-    if (/[A-Za-z]/.test(char)) {
-      let isUpperCase = char === char.toUpperCase();
+const people3 = [
+  {
+    name: 'Alex',
+    know: ['Eva', 'Jhon'],
+  },
+  {
+    name: 'Jhon',
+    know: [],
+  },
+  {
+    name: 'Eva',
+    know: ['Alex', 'Jhon'],
+  },
+  {
+    name: 'Ivan',
+    know: ['Jhon', 'Alex'],
+  },
+]; // Jhon
 
-      let charCode = char.charCodeAt(0);
-
-      if (isUpperCase) {
-        charCode = ((charCode - 65 + 13) % 26) + 65;
-      } else {
-        charCode = ((charCode - 97 + 13) % 26) + 97;
-      }
-
-      char = String.fromCharCode(charCode);
-    }
-
-    result += char;
+function getNarcissus(arr) {
+  const filteredItems = arr.filter(({ know }) => !know.length); // know.length === 0
+  if (filteredItems.length !== 1) {
+    return 'Not found';
   }
-
-  return result;
+  const narcissus = filteredItems[0]['name'];
+  const isNarcissus = arr.every(
+    people => people.know.includes(narcissus) || people.name === narcissus,
+  );
+  return isNarcissus ? narcissus : 'Not found';
 }
 
-const encryptedMessage = rot13('Hello, World!');
-
-console.log(encryptedMessage);
+console.log(getNarcissus(people3));
 
 //---------------------------------------------------------------------------------------------------------------
 
-// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
-
-function boolToWord(bool) {
-  return bool ? 'Yes' : 'No';
-}
-
-//---------------------------------------------------------------------------------------------------------------
+// Потрібно створити функцію яка буде виводи кількість авто та їх список марок в ціновому діапазоні від мін до макс, формат стрінги
+const cars = [
+  {
+    car: 'Honda',
+    type: 'Civic',
+    price: 12000,
+  },
+  {
+    car: 'Audi',
+    type: 'Q7',
+    price: 40000,
+  },
+  {
+    car: 'BMW',
+    type: '5 siries',
+    price: 9000,
+  },
+  {
+    car: 'Honda',
+    type: 'Accord',
+    price: 20000,
+  },
+  {
+    car: 'Volvo',
+    type: 'XC60',
+    price: 7000,
+  },
+];
+const findCars = (cars, min, max) => {
+  const filteredCars = cars.filter(({ price }) => price >= min && price <= max);
+  return filteredCars.reduce(
+    (acc, { car, type }, idx) => {
+      return acc + `${idx + 1}. ${car} ${type}\n`;
+    },
+    filteredCars.length
+      ? `Кількість знайдених автомобілів ${filteredCars.length}: \n`
+      : 'Вибачте але за вашим пошуком жодного авто не було знайдено.',
+  );
+};
+console.log(findCars(cars, 7000, 9000));
