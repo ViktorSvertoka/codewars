@@ -337,3 +337,15 @@ products.forEach((_, __, ___) => {
 });
 
 //---------------------------------------------------------------------------------------------------------------
+
+function customForEach(arr, callback) {
+  for (let i = 0; i < arr.length; i += 1) {
+    callback(arr[i], i, arr);
+  }
+}
+
+customForEach(products, (product, idx, arr) => {
+  console.log('product', product);
+  console.log('idx', (idx += 1));
+  console.log('arr', arr);
+});
