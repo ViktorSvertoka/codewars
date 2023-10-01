@@ -293,21 +293,47 @@ function buyProduct(productName, productQty, price) {
 
 // Інлайнова Callback функція
 
-function logResult(a, b, callback) {
-  console.log(callback);
-  const result = callback(a, b);
-  console.log(`Result is ${result}`);
+// function logResult(a, b, callback) {
+//   console.log(callback);
+//   const result = callback(a, b);
+//   console.log(`Result is ${result}`);
+// }
+
+// logResult(4, 5, function (a, b) {
+//   return a + b;
+// });
+
+// logResult(4, 5, function (a, b) {
+//   return a * b;
+// });
+
+// logResult(4, 5, (a, b) => a + b);
+// logResult(4, 5, (a, b) => a * b);
+
+//---------------------------------------------------------------------------------------------------------------
+
+// ForEach
+
+const products = ['Apple', 'Banana', 'Orange', 'Mango', 'Watermelon'];
+
+// Цикл for
+
+for (let i = 0; i < products.length; i += 1) {
+  const product = products[i];
+
+  console.log(`${i + 1} - ${product}`);
 }
 
-logResult(4, 5, function (a, b) {
-  return a + b;
-});
+// forEach
 
-logResult(4, 5, function (a, b) {
-  return a * b;
-});
+// products.forEach((item, idx, arr) => {
+//   console.log(`${idx + 1} - ${item}`);
+//   console.log(arr);
+// });
 
-logResult(4, 5, (a, b) => a + b);
-logResult(4, 5, (a, b) => a * b);
+products.forEach((_, __, ___) => {
+  console.log(`${__ + 1} - ${_}`);
+  console.log(___);
+});
 
 //---------------------------------------------------------------------------------------------------------------
