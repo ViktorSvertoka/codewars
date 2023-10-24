@@ -314,15 +314,15 @@ function buyProduct(productName, productQty, price) {
 
 // ForEach
 
-const products = ['Apple', 'Banana', 'Orange', 'Mango', 'Watermelon'];
+// const products = ['Apple', 'Banana', 'Orange', 'Mango', 'Watermelon'];
 
 // Цикл for
 
-for (let i = 0; i < products.length; i += 1) {
-  const product = products[i];
+// for (let i = 0; i < products.length; i += 1) {
+//   const product = products[i];
 
-  console.log(`${i + 1} - ${product}`);
-}
+//   console.log(`${i + 1} - ${product}`);
+// }
 
 // forEach
 
@@ -331,21 +331,62 @@ for (let i = 0; i < products.length; i += 1) {
 //   console.log(arr);
 // });
 
-products.forEach((_, __, ___) => {
-  console.log(`${__ + 1} - ${_}`);
-  console.log(___);
-});
+// products.forEach((_, __, ___) => {
+//   console.log(`${__ + 1} - ${_}`);
+//   console.log(___);
+// });
 
 //---------------------------------------------------------------------------------------------------------------
 
-function customForEach(arr, callback) {
-  for (let i = 0; i < arr.length; i += 1) {
-    callback(arr[i], i, arr);
-  }
+// function customForEach(arr, callback) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     callback(arr[i], i, arr);
+//   }
+// }
+
+// customForEach(products, (product, idx, arr) => {
+//   console.log('product', product);
+//   console.log('idx', (idx += 1));
+//   console.log('arr', arr);
+// });
+
+//---------------------------------------------------------------------------------------------------------------
+
+// Immediately Invoked Function Expression (IIFE)
+
+// const runOneTime = function () {
+//   console.log('You will never see this function call again.');
+// };
+// runOneTime();
+// runOneTime();
+
+// (function () {
+//   console.log('You will never see this function call again.');
+// })();
+
+// (() => console.log('You will never see this ARROW function call again.'))();
+
+// {
+//   // const x = 1;
+//   var y = 2;
+// }
+
+// console.log(z);
+
+//---------------------------------------------------------------------------------------------------------------
+
+function counter() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
 }
 
-customForEach(products, (product, idx, arr) => {
-  console.log('product', product);
-  console.log('idx', (idx += 1));
-  console.log('arr', arr);
-});
+let counter1 = counter();
+console.log(counter1());
+
+let counter2 = counter();
+console.log(counter2());
+
+//---------------------------------------------------------------------------------------------------------------
