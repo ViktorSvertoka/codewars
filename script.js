@@ -375,18 +375,42 @@ function buyProduct(productName, productQty, price) {
 
 //---------------------------------------------------------------------------------------------------------------
 
-function counter() {
-  let count = 0;
-  return function () {
-    count++;
-    return count;
-  };
-}
+// function counter() {
+//   let count = 0;
+//   return function () {
+//     count++;
+//     return count;
+//   };
+// }
 
-let counter1 = counter();
-console.log(counter1());
+// let counter1 = counter();
+// console.log(counter1());
 
-let counter2 = counter();
-console.log(counter2());
+// let counter2 = counter();
+// console.log(counter2());
+
+//---------------------------------------------------------------------------------------------------------------
+
+let letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+// slice() ---> не змінює масив, а створює копію
+
+// console.log(letters.slice(1));
+// console.log(letters.slice(1, 4));
+// console.log(letters.slice(-1));
+// console.log(letters.slice(-3));
+// console.log(letters.slice(2, -1));
+// console.log(letters.slice());
+// console.log([...letters]);
+
+// splice() ---> змінює масив
+
+// console.log(letters.splice(1));
+// console.log(letters.splice(-1));
+// console.log(letters.splice(1, 3));
+
+// reverse() ---> розставляє елементи у зворотному порядку
+
+// console.log(letters.reverse());
 
 //---------------------------------------------------------------------------------------------------------------
