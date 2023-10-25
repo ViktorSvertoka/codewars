@@ -392,6 +392,7 @@ function buyProduct(productName, productQty, price) {
 //---------------------------------------------------------------------------------------------------------------
 
 let letters = ['a', 'b', 'c', 'd', 'e', 'f'];
+let letters2 = ['z', 'x', 'y'];
 
 // slice() ---> не змінює масив, а створює копію
 
@@ -409,8 +410,41 @@ let letters = ['a', 'b', 'c', 'd', 'e', 'f'];
 // console.log(letters.splice(-1));
 // console.log(letters.splice(1, 3));
 
-// reverse() ---> розставляє елементи у зворотному порядку
+// reverse() ---> розставляє елементи у зворотному порядку, змінює масив
 
 // console.log(letters.reverse());
 
+// concat()
+
+// console.log(letters.concat(letters2));
+// console.log([...letters, ...letters2]);
+
+// join()
+
+// console.log(letters.join(', '));
+// console.log(letters.join(' : '));
+
 //---------------------------------------------------------------------------------------------------------------
+
+const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
+
+// for of
+
+// for (const transaction of transactions) {
+//   if (transaction > 0) {
+//     console.log(`${transaction} was deposit`);
+//   } else {
+//     console.log(`${transaction} was withdrew`); // з мінусом
+//     console.log(`${Math.abs(transaction)} was withdrew`); // без мінуса
+//   }
+// }
+
+// forEach
+
+transactions.forEach(function (transaction, index, array) {
+  if (transaction > 0) {
+    console.log(`Transaction № ${index + 1} : ${transaction} was deposit`);
+  } else {
+    console.log(`Transaction № ${index + 1} : ${transaction} was withdrew`);
+  }
+});
