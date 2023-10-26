@@ -482,3 +482,15 @@ console.log('----------------------------');
 veryfyCats(catsJaneData2, catsJuliaData2);
 
 //---------------------------------------------------------------------------------------------------------------
+
+function showMessage(message) {
+  return function () {
+    alert(message);
+  };
+}
+
+// Створення функції замикання, яка виводить повідомлення "Hello, world!"
+const sayHello = showMessage('Hello, world!');
+
+// Виклик функції замикання для виведення повідомлення
+sayHello();
