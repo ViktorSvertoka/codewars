@@ -453,44 +453,50 @@ const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
 
 // forEach
 
-const catsJaneData1 = [4, 5, 3, 11, 6, 2, 4, 1, 5, 9];
-const catsJuliaData1 = [2, 4, 5, 1, 13, 2, 15, 8, 3, 7];
+// const catsJaneData1 = [4, 5, 3, 11, 6, 2, 4, 1, 5, 9];
+// const catsJuliaData1 = [2, 4, 5, 1, 13, 2, 15, 8, 3, 7];
 
-const catsJaneData2 = [3, 5, 9, 14, 1, 2, 6, 8, 3, 10];
-const catsJuliaData2 = [8, 2, 10, 1, 2, 5, 6, 3, 1, 4];
+// const catsJaneData2 = [3, 5, 9, 14, 1, 2, 6, 8, 3, 10];
+// const catsJuliaData2 = [8, 2, 10, 1, 2, 5, 6, 3, 1, 4];
 
-const veryfyCats = function (catsJane, catsJulia) {
-  const catsJaneCorrect = catsJane.slice();
-  catsJaneCorrect.splice(0, 1);
-  catsJaneCorrect.splice(-1);
-  // console.log(catsJaneCorrect);
+// const veryfyCats = function (catsJane, catsJulia) {
+//   const catsJaneCorrect = catsJane.slice();
+//   catsJaneCorrect.splice(0, 1);
+//   catsJaneCorrect.splice(-1);
+//   console.log(catsJaneCorrect);
 
-  const cats = catsJaneCorrect.concat(catsJulia);
-  // console.log(cats);
+//   const cats = catsJaneCorrect.concat(catsJulia);
+//   console.log(cats);
 
-  cats.forEach(function (catAge, index) {
-    if (catAge >= 2) {
-      console.log(`Cat № ${index + 1} adult, her ${catAge} age`);
-    } else {
-      console.log(`Cat № ${index + 1} still kitten`);
-    }
-  });
-};
+//   cats.forEach(function (catAge, index) {
+//     if (catAge >= 2) {
+//       console.log(`Cat № ${index + 1} adult, her ${catAge} age`);
+//     } else {
+//       console.log(`Cat № ${index + 1} still kitten`);
+//     }
+//   });
+// };
 
-veryfyCats(catsJaneData1, catsJuliaData1);
-console.log('----------------------------');
-veryfyCats(catsJaneData2, catsJuliaData2);
+// veryfyCats(catsJaneData1, catsJuliaData1);
+// console.log('----------------------------');
+// veryfyCats(catsJaneData2, catsJuliaData2);
 
 //---------------------------------------------------------------------------------------------------------------
 
-function showMessage(message) {
-  return function () {
-    alert(message);
-  };
-}
+// function showMessage(message) {
+//   return function () {
+//     alert(message);
+//   };
+// }
 
-// Створення функції замикання, яка виводить повідомлення "Hello, world!"
-const sayHello = showMessage('Hello, world!');
+// const sayHello = showMessage('Hello, world!');
 
-// Виклик функції замикання для виведення повідомлення
-sayHello();
+// sayHello();
+
+//---------------------------------------------------------------------------------------------------------------
+
+localStorage.setItem('ui-theme', 'light');
+
+console.log(localStorage); // Storage {ui-theme: "light", length: 1}
+
+//---------------------------------------------------------------------------------------------------------------
