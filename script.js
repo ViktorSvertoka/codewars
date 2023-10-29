@@ -495,8 +495,46 @@ const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
 
 //---------------------------------------------------------------------------------------------------------------
 
-localStorage.setItem('ui-theme', 'light');
+// localStorage.setItem('ui-theme', 'light');
 
-console.log(localStorage); // Storage {ui-theme: "light", length: 1}
+// console.log(localStorage); // Storage {ui-theme: "light", length: 1}
+
+//---------------------------------------------------------------------------------------------------------------
+
+// const settings = {
+//   theme: 'dark',
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+
+// localStorage.setItem('settings', JSON.stringify(settings));
+
+// console.log(localStorage);
+
+//---------------------------------------------------------------------------------------------------------------
+
+// const settings = {
+//   theme: 'dark',
+//   isAuthenticated: true,
+//   options: [1, 2, 3],
+// };
+// localStorage.setItem('settings', JSON.stringify(settings));
+
+// const savedSettings = localStorage.getItem('settings');
+// console.log(savedSettings); // A string
+
+// const parsedSettings = JSON.parse(savedSettings);
+// console.log(parsedSettings); // Settings object
+
+//---------------------------------------------------------------------------------------------------------------
+
+localStorage.setItem('ui-theme', 'light');
+localStorage.setItem('notif-level', 'mute');
+
+console.log(localStorage);
+// Storage {notif-level: 'mute', ui-theme: 'light', length: 2}
+
+localStorage.clear();
+console.log(localStorage); // Storage {length: 0}
 
 //---------------------------------------------------------------------------------------------------------------
