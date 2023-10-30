@@ -528,13 +528,54 @@ const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
 
 //---------------------------------------------------------------------------------------------------------------
 
-localStorage.setItem('ui-theme', 'light');
-localStorage.setItem('notif-level', 'mute');
+// localStorage.setItem('ui-theme', 'light');
+// localStorage.setItem('notif-level', 'mute');
 
-console.log(localStorage);
-// Storage {notif-level: 'mute', ui-theme: 'light', length: 2}
+// console.log(localStorage);
+// // Storage {notif-level: 'mute', ui-theme: 'light', length: 2}
 
-localStorage.clear();
-console.log(localStorage); // Storage {length: 0}
+// localStorage.clear();
+// console.log(localStorage); // Storage {length: 0}
+
+//---------------------------------------------------------------------------------------------------------------
+
+// sessionStorage.setItem('user-id', '123');
+// sessionStorage.setItem(
+//   'tickets',
+//   JSON.stringify({ from: 'Lviv', to: 'Kyiv', quantity: 2 }),
+// );
+// console.log(sessionStorage);
+// // Storage {user-id: '123', tickets: '{"from":"Lviv","to":"Kyiv","quantity":2}', length: 2}
+
+// const userId = sessionStorage.getItem('user-id');
+// console.log(userId); // "123"
+
+// const tickets = JSON.parse(sessionStorage.getItem('tickets'));
+// console.log(tickets); // { from: "Lviv", to: "Kyiv", quantity: 2 }
+
+// sessionStorage.removeItem('tickets');
+// console.log(sessionStorage); // Storage {user-id: '123', length: 1}
+
+// sessionStorage.clear();
+// console.log(sessionStorage); // Storage {length: 0}
+
+//---------------------------------------------------------------------------------------------------------------
+
+console.log('First log');
+console.log('Second log');
+console.log('Third log');
+
+console.log('----------------');
+
+// Will run first
+console.log('First log');
+
+setTimeout(() => {
+  // Will run last, after 2000 milliseconds
+  console.log('Second log');
+}, 2000);
+
+// Will run second
+console.log('Third log');
 
 //---------------------------------------------------------------------------------------------------------------
