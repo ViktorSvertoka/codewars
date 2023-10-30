@@ -561,21 +561,45 @@ const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
 
 //---------------------------------------------------------------------------------------------------------------
 
-console.log('First log');
-console.log('Second log');
-console.log('Third log');
+// console.log('First log');
+// console.log('Second log');
+// console.log('Third log');
 
-console.log('----------------');
+// console.log('----------------');
 
-// Will run first
-console.log('First log');
+// // Will run first
+// console.log('First log');
 
-setTimeout(() => {
-  // Will run last, after 2000 milliseconds
-  console.log('Second log');
-}, 2000);
+// setTimeout(() => {
+//   // Will run last, after 2000 milliseconds
+//   console.log('Second log');
+// }, 2000);
 
-// Will run second
-console.log('Third log');
+// // Will run second
+// console.log('Third log');
+
+//---------------------------------------------------------------------------------------------------------------
+
+// const button = document.querySelector('button');
+
+// const onClick = () => {
+//   const timerId = setTimeout(() => {
+//     console.log('I love async JS!');
+//   }, 2000);
+
+//   console.log(timerId);
+// };
+
+// button.addEventListener('click', onClick);
+
+//---------------------------------------------------------------------------------------------------------------
+
+// const greet = () => {
+//   console.log('Hello!');
+// };
+
+// const timerId = setTimeout(greet, 3000);
+
+// clearTimeout(timerId);
 
 //---------------------------------------------------------------------------------------------------------------
