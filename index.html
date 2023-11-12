@@ -4,15 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeWars</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <!-- <button type="button" class="btn">Click me</button> -->
+    <div class="container">
+      <div class="wrapper">
+        <div class="header-wrap">
+          <nav>
+            <ul class="list-btn">
+              <li><button class="btn-1 btn" type="button">All</button></li>
+              <li>
+                <button class="btn-2 btn" type="button">In progress</button>
+              </li>
+              <li><button class="btn-3 btn" type="button">Done</button></li>
+              <li><button class="btn-4 btn" type="button">Low</button></li>
+              <li><button class="btn-5 btn" type="button">Medium</button></li>
+              <li><button class="btn-6 btn" type="button">Hight</button></li>
+            </ul>
+          </nav>
+        </div>
 
-    <!-- <button class="btn js-start">Start</button>
-    <button class="btn js-stop">Stop</button> -->
+        <form class="js-form" action="">
+          <input class="js-input" type="text" name="description" />
+          <select class="js-select" id="" name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="Hight">Hight</option>
+          </select>
+          <button class="js-btn" type="submit">Submit</button>
+        </form>
 
-    <script src="./script.js" type="module"></script>
+        <ul class="js-list"></ul>
+      </div>
+    </div>
+    <script src="./index.js" type="module"></script>
   </body>
 </html>
