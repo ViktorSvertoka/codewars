@@ -1,203 +1,94 @@
-// Оголошуємо об'єкт refs для посилань на елементи форми та списку завдань
-const refs = {
-  form: document.querySelector('.js-form'),
-  list: document.querySelector('.js-list'),
-  allBtn: document.querySelector('.btn-1'),
-  inProgressBtn: document.querySelector('.btn-2'),
-  doneBtn: document.querySelector('.btn-3'),
-  lowBtn: document.querySelector('.btn-4'),
-  mediumBtn: document.querySelector('.btn-5'),
-  hightBtn: document.querySelector('.btn-6'),
-};
+// User
+// Завдання: Порахувати кількість кутів в N трикутниках і К ромбах.
+// N і K передаються параметрами функції і 0 < N, K < 10000. Функція повертає сумарну кількість кутів.
 
-// Функція для фільтрації і відображення завдань відповідно до вибору користувача
-function filterAndDisplayTasks(filter) {
-  const tasks = getTasksFromLocalStorage();
-  const filteredTasks = tasks.filter(task => {
-    if (filter === 'All') {
-      return true;
-    } else if (filter === 'In progress') {
-      return !task.done;
-    } else if (filter === 'Done') {
-      return task.done;
-    } else {
-      return task.priority === filter;
+// function resolve(triangleN, rhombK) {
+//   if (triangleN > 0 && rhombK < 10000) {
+//     // Кількість кутів у трикутниках
+//     const triangleAngles = 3 * triangleN;
+
+//     // Кількість кутів у ромбах
+//     const rhombAngles = 4 * rhombK;
+
+//     // Сумарна кількість кутів
+//     const totalAngles = triangleAngles + rhombAngles;
+
+//     return totalAngles;
+//   }
+// }
+
+// // Приклад використання:
+// const N = 1; // Задана кількість трикутників
+// const K = 11000; // Задана кількість ромбів
+
+// const result = resolve(N, K);
+// console.log(result); // Виведе сумарну кількість кутів у трикутниках та ромбах
+
+//----------------------------------------------------------------------------------------------------------
+
+// Завдання: На вхід функції передається три цілих числа, до того ж два з них однакові. Треба повернути те,
+// яке відрізняється від інших або ж повернути - 1 якщо всі три рівні між собою.
+// Приклад:
+// Вхід: 1, 1, 3
+// Вихід: 3
+
+// function resolve(first, second, third) {
+//   if (first > second || first > third) {
+//     return first;
+//   } else if (first < second || second > third) {
+//     return second;
+//   } else if (first < third || second < third) {
+//     return third;
+//   } else {
+//     return 1;
+//   }
+// }
+
+// resolve(1, 1, 3);
+
+// console.log(resolve(3, 3, 10));
+
+//----------------------------------------------------------------------------------------------------------
+
+// User
+// Завдання: На вхід функції передається три числа.Треба віднімати від першого числа друге до тих пір,
+// поки отриманий результат не стане меншим за третє число, і після цього потрібно повернути цей результат.
+// Приклад:
+// Вхід: 20, 3, 10
+// Вихід: 8
+
+// function resolve(first, second, third) {
+//   while (first >= third) {
+//     first -= second;
+//   }
+
+//   return first;
+// }
+
+// console.log(resolve(20, 3, 10));
+
+//--------------------------------------------------------------------------------------------------------------
+
+// Завдання: На вхід функції приходить масив цілих чисел, а другим параметром - його розмір.
+// Знайдіть в масиві перше число, яке оточене нулями.Якщо таке число не знайдено, поверніть - 1,
+// інакше поверніть індекс такого елемента.
+// Приклад:
+// Вхід: [0, 4, 0, 8], 4
+// Вихід: 1
+
+// JavaScript
+function resolve(array, arraySize) {
+  for (let i = 1; i < arraySize - 1; i++) {
+    if (array[i] !== 0) continue; // Пропустити елементи, які не є нулями
+    if (array[i - 1] === 0 && array[i + 1] === 0) {
+      return i; // Знайдено число, яке оточене нулями
     }
-  });
-
-  refs.list.innerHTML = ''; // Очищаємо список завдань
-
-  filteredTasks.forEach(taskObj => {
-    const taskMarkup = createMarkup(taskObj);
-    refs.list.insertAdjacentHTML('beforeend', taskMarkup);
-  });
-}
-
-// Обробники подій для кнопок фільтрації
-refs.allBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('All');
-});
-
-refs.inProgressBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('In progress');
-});
-
-refs.doneBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('Done');
-});
-
-refs.lowBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('Low');
-});
-
-refs.mediumBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('Medium');
-});
-
-refs.hightBtn.addEventListener('click', () => {
-  filterAndDisplayTasks('Hight');
-});
-
-// Початкове відображення завдань при завантаженні сторінки
-filterAndDisplayTasks('All');
-
-// Функція для отримання завдань з локального сховища
-function getTasksFromLocalStorage() {
-  return JSON.parse(localStorage.getItem('tasks')) || [];
-}
-
-// Функція для збереження завдань в локальному сховищі
-function setTasksInLocalStorage(tasks) {
-  localStorage.setItem('tasks', JSON.stringify(tasks));
-}
-
-// Функція для позначення завдання як виконаного
-function markTaskAsDone(taskId) {
-  const tasks = getTasksFromLocalStorage();
-  const taskIndex = tasks.findIndex(task => task.id == taskId);
-  if (taskIndex !== -1) {
-    tasks[taskIndex].done = true;
-    setTasksInLocalStorage(tasks);
   }
+  return -1; // Не знайдено відповідного числа
 }
 
-// Функція для видалення завдання з локального сховища
-function removeTaskFromLocalStorage(taskId) {
-  const tasks = getTasksFromLocalStorage();
-  const updatedTasks = tasks.filter(task => task.id !== parseInt(taskId));
-  setTasksInLocalStorage(updatedTasks);
-}
-
-// Функція для оновлення стану відображення завдання
-function updateTaskUIState(listItem, isDone) {
-  const articleElement = listItem.querySelector('.description');
-  const spanElement = listItem.querySelector('.priority');
-  const btnElement = listItem.querySelector('.done-btn');
-  articleElement.classList.toggle('through-text', isDone);
-  spanElement.classList.toggle('through-text', isDone);
-  btnElement.classList.toggle('is-hidden', isDone);
-  if (isDone) {
-    listItem.classList.add('bg-green');
-  } else {
-    listItem.classList.remove('bg-green');
-  }
-}
-
-// Функція для створення розмітки HTML завдання
-function createMarkup(taskObj) {
-  const { id, description, priority, done } = taskObj;
-  return `
-    <li class="item ${done ? 'bg-green' : ''}" data-task-id="${id}">
-    <div class="wrap1">
-      <article class="description ${
-        done ? 'through-text' : ''
-      }">${description}</article>
-      <span class="priority ${done ? 'through-text' : ''}">${priority}</span>
-    </div>
-    <div class="wrap2">
-      <button class="done-btn ${
-        done ? 'is-hidden' : ''
-      }" type="button">Mark Done</button>
-      <button class="remove-btn" type="button">Remove</button>
-    </div>
-    </li>`;
-}
-
-// Функція для збереження завдання в локальному сховищі та оновлення відображення
-function saveTaskToLocalStorage(taskObj) {
-  const tasks = getTasksFromLocalStorage();
-  tasks.push(taskObj);
-  setTasksInLocalStorage(tasks);
-}
-
-// Обробник події відправки форми
-function handleFormSubmit(event) {
-  event.preventDefault();
-
-  const { description, priority } = event.target.elements;
-
-  // Створюємо об'єкт завдання на основі даних з форми
-  const taskObj = {
-    id: Date.now(),
-    description: description.value,
-    priority: priority.value,
-    done: false,
-  };
-
-  // Створюємо розмітку завдання та додаємо її до списку
-  const taskMarkup = createMarkup(taskObj);
-  refs.list.insertAdjacentHTML('beforeend', taskMarkup);
-
-  // Перевіряємо і встановлюємо клас "bg-green", якщо задача вже виконана
-  if (taskObj.done) {
-    const listItem = refs.list.lastChild;
-    listItem.classList.add('bg-green');
-  }
-
-  // Скидаємо форму та зберігаємо завдання в локальному сховищі
-  event.target.reset();
-
-  saveTaskToLocalStorage(taskObj);
-}
-
-// Обробник події кліку на елементах списку завдань
-function handleListClick(event) {
-  const listItem = event.target.closest('li');
-  if (!listItem) return;
-
-  const taskId = listItem.dataset.taskId;
-
-  if (event.target.classList.contains('done-btn')) {
-    markTaskAsDone(taskId);
-    updateTaskUIState(listItem, true);
-  }
-
-  if (event.target.classList.contains('remove-btn')) {
-    removeTaskFromLocalStorage(taskId);
-    listItem.remove();
-  }
-}
-
-// Функція для відновлення завдань з локального сховища при завантаженні сторінки
-function restoreTasksFromLocalStorage() {
-  const tasks = getTasksFromLocalStorage();
-  tasks.forEach(taskObj => {
-    const taskMarkup = createMarkup(taskObj);
-    refs.list.insertAdjacentHTML('beforeend', taskMarkup);
-
-    // Перевіряємо і встановлюємо клас "bg-green", якщо задача вже виконана
-    if (taskObj.done) {
-      const listItem = refs.list.lastChild;
-      listItem.classList.add('bg-green');
-    }
-  });
-}
-
-// Додаємо обробник події відправки форми
-refs.form.addEventListener('submit', handleFormSubmit);
-
-// Додаємо обробник події кліку на елементах списку завдань
-refs.list.addEventListener('click', handleListClick);
-
-// Відновлюємо завдання з локального сховища при завантаженні сторінки
-restoreTasksFromLocalStorage();
+// Приклад використання
+var inputArray = [0, 4, 0, 8];
+var size = 4;
+var result = resolve(inputArray, size);
+console.log(result); // Виведе 1
