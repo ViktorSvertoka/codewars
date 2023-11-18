@@ -78,8 +78,7 @@
 
 // JavaScript
 function resolve(array, arraySize) {
-  for (let i = 1; i < arraySize - 1; i++) {
-    if (array[i] !== 0) continue; // Пропустити елементи, які не є нулями
+  for (let i = 1; i < arraySize; i++) {
     if (array[i - 1] === 0 && array[i + 1] === 0) {
       return i; // Знайдено число, яке оточене нулями
     }
@@ -88,7 +87,9 @@ function resolve(array, arraySize) {
 }
 
 // Приклад використання
-var inputArray = [0, 4, 0, 8];
-var size = 4;
+var inputArray = [1, 1, 1, 11, 0, 1, 0];
+var size = 7;
 var result = resolve(inputArray, size);
 console.log(result); // Виведе 1
+
+//----------------------------------------------------------------------------------------------------------------
