@@ -76,18 +76,173 @@
 // Вхід: [0, 4, 0, 8], 4
 // Вихід: 1
 
-// JavaScript
-function resolve(array, arraySize) {
-  for (let i = 1; i < arraySize; i++) {
-    if (array[i - 1] === 0 && array[i + 1] === 0) {
-      return i; // Знайдено число, яке оточене нулями
-    }
-  }
-  return -1; // Не знайдено відповідного числа
-}
+// // JavaScript
+// function resolve(array, arraySize) {
+//   for (let i = 1; i < arraySize; i++) {
+//     if (array[i - 1] === 0 && array[i + 1] === 0) {
+//       return i; // Знайдено число, яке оточене нулями
+//     }
+//   }
+//   return -1; // Не знайдено відповідного числа
+// }
 
-// Приклад використання
-var inputArray = [1, 1, 1, 11, 0, 1, 0];
-var size = 7;
-var result = resolve(inputArray, size);
-console.log(result); // Виведе 1
+// // Приклад використання
+// var inputArray = [1, 1, 1, 11, 0, 1, 0];
+// var size = 7;
+// var result = resolve(inputArray, size);
+// console.log(result); // Виведе 1
+
+//--------------------------------------------------------------------------------------------------------------
+
+// ******************** CRUD ******************** \\
+
+// Create - POST
+// Read   - GET
+// Update - PUT PATCH
+// DELETE - DELETE
+
+// ******************** POST - CREATE ******************** \\
+
+const post = {
+  title: 'Hello world',
+  body: 'I love JS',
+  userId: 11,
+};
+
+const options = {
+  method: 'POST',
+  body: JSON.stringify(post),
+  headers: {
+    'Content-type': 'application/json',
+  },
+};
+
+fetch('https://jsonplaceholder.typicode.com/posts', options)
+  .then(resp => {
+    if (!resp.ok) {
+      throw new Error(resp.statusText);
+    }
+
+    return resp.json();
+  })
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
+
+// ******************** GET - READ ******************** \\
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+//   .then((resp) => {
+//     if (!resp.ok) {
+//       throw new Error(resp.statusText);
+//     }
+
+//     return resp.json();
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// ******************** PATCH - UPDATE ******************** \\
+
+// const oldPost = {
+//   title: "Hello world",
+//   body: "I love JS",
+//   userId: 11,
+//   id:1
+// };
+
+// const newPost = {
+//     title: "Hello from GOIT",
+//   };
+
+// const result = {
+//     title: "Hello from GOIT",
+//     body: "I love JS",
+//     userId: 11,
+//     id:1
+// }
+
+// const newPost = {
+//   title: "Hello from GOIT",
+//   body: 'Test 20:16',
+//   authorName: 'TEST USER'
+// };
+
+// const options = {
+//     method: 'PATCH',
+//     body: JSON.stringify(newPost),
+//     headers: {
+//         "Content-type": "application/json"
+//     }
+// }
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1", options)
+// .then((resp) => {
+//     if (!resp.ok) {
+//       throw new Error(resp.statusText);
+//     }
+
+//     return resp.json();
+//   })
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// ******************** PUT - UPDATE ******************** \\
+
+// const oldPost = {
+//   title: "Hello world",
+//   body: "I love JS",
+//   userId: 11,
+//   id: 1,
+// };
+
+// const newPost = {
+//   title: "Hello from GOIT",
+// };
+
+// const result = {
+//   title: "Hello from GOIT",
+//   id: 1,
+// };
+
+// 1-101
+
+// 101
+
+// const result = {
+//     title: "Hello from GOIT",
+//     id: 101,
+//   };
+
+// const newPost = {
+//     title: "Hello from GOIT",
+//   };
+
+//   const options = {
+//       method: 'PUT',
+//       body: JSON.stringify(newPost),
+//       headers: {
+//           "Content-type": "application/json"
+//       }
+//   }
+
+//   fetch("https://jsonplaceholder.typicode.com/posts/1", options)
+//   .then((resp) => {
+//       if (!resp.ok) {
+//         throw new Error(resp.statusText);
+//       }
+
+//       return resp.json();
+//     })
+//     .then((data) => console.log(data))
+//     .catch((err) => console.log(err));
+
+// ******************** DELETE ******************** \\
+
+// const options = {
+//     method: "DELETE",
+//     body: {
+//         id: 1
+//     }
+// }
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1", options)
