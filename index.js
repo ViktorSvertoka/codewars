@@ -103,30 +103,30 @@
 
 // ******************** POST - CREATE ******************** \\
 
-const post = {
-  title: 'Hello world',
-  body: 'I love JS',
-  userId: 11,
-};
+// const post = {
+//   title: 'Hello world',
+//   body: 'I love JS',
+//   userId: 11,
+// };
 
-const options = {
-  method: 'POST',
-  body: JSON.stringify(post),
-  headers: {
-    'Content-type': 'application/json',
-  },
-};
+// const options = {
+//   method: 'POST',
+//   body: JSON.stringify(post),
+//   headers: {
+//     'Content-type': 'application/json',
+//   },
+// };
 
-fetch('https://jsonplaceholder.typicode.com/posts', options)
-  .then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
-    }
+// fetch('https://jsonplaceholder.typicode.com/posts', options)
+//   .then(resp => {
+//     if (!resp.ok) {
+//       throw new Error(resp.statusText);
+//     }
 
-    return resp.json();
-  })
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+//     return resp.json();
+//   })
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
 
 // ******************** GET - READ ******************** \\
 
@@ -246,3 +246,22 @@ fetch('https://jsonplaceholder.typicode.com/posts', options)
 // }
 
 // fetch("https://jsonplaceholder.typicode.com/posts/1", options)
+
+//--------------------------------------------------------------------------------------------------------------
+
+function between(a, b) {
+  let result = [];
+
+  for (let i = a; i <= b; i++) {
+    result.push(i);
+  }
+
+  return result;
+}
+
+let a = 1;
+let b = 9;
+
+console.log(between(a, b));
+
+//--------------------------------------------------------------------------------------------------------------
