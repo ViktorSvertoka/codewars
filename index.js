@@ -272,12 +272,27 @@
 
 // const usdToEuro = 0.86;
 
-// const transactionsEuro = transactions.map(trans => {
-//   return trans * usdToEuro;
-// });
+// const transactionsEuro = transactions.map(trans => trans * usdToEuro);
 
 // console.log(transactions);
 
 // console.log(transactionsEuro);
+
+// const transactionsEuro1 = [];
+
+// for (const trans of transactions) {
+//   transactionsEuro1.push(trans * usdToEuro);
+// }
+
+// console.log(transactionsEuro1);
+
+// const transactionDescriptions = transactions.map(
+//   (transaction, index) =>
+//     `Transaction № ${index + 1} : ${Math.abs(transaction)} was ${
+//       transaction > 0 ? 'deposited' : 'withdrew'
+//     }`,
+// );
+
+// console.log(transactionDescriptions);
 
 //--------------------------------------------------------------------------------------------------------------
