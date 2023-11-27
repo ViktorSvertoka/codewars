@@ -249,19 +249,35 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
-function between(a, b) {
-  let result = [];
+// function between(a, b) {
+//   let result = [];
 
-  for (let i = a; i <= b; i++) {
-    result.push(i);
-  }
+//   for (let i = a; i <= b; i++) {
+//     result.push(i);
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-let a = 1;
-let b = 9;
+// let a = 1;
+// let b = 9;
 
-console.log(between(a, b));
+// console.log(between(a, b));
+
+//--------------------------------------------------------------------------------------------------------------
+
+// map()
+
+// const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
+
+// const usdToEuro = 0.86;
+
+// const transactionsEuro = transactions.map(trans => {
+//   return trans * usdToEuro;
+// });
+
+// console.log(transactions);
+
+// console.log(transactionsEuro);
 
 //--------------------------------------------------------------------------------------------------------------
