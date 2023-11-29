@@ -309,42 +309,52 @@
 // 625 --> 676
 // 114 -- > -1 since 114 is not a perfect square
 
-function findNextSquare(sq) {
-  let sqer = [];
-  for (let i = 1; i < sq; i += 2) {
-    sqer.push(i);
-    const sumOfNumbers = sqer.reduce((acc, number) => acc + number, 0);
-    if (sumOfNumbers === sq) {
-      const newArr = sqer[sqer.length - 1] + 2;
+// function findNextSquare(sq) {
+//   let sqer = [];
+//   for (let i = 1; i < sq; i += 2) {
+//     sqer.push(i);
+//     const sumOfNumbers = sqer.reduce((acc, number) => acc + number, 0);
+//     if (sumOfNumbers === sq) {
+//       const newArr = sqer[sqer.length - 1] + 2;
 
-      return [...sqer, newArr].reduce((acc, number) => acc + number, 0);
-    }
-  }
-  return -1;
-}
+//       return [...sqer, newArr].reduce((acc, number) => acc + number, 0);
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(findNextSquare(49));
-
-//--------------------------------------------------------------------------------------------------------------
-
-function findNextSquare1(sq) {
-  const sqrt = Math.sqrt(sq);
-
-  if (Number.isInteger(sqrt)) {
-    return Math.pow(sqrt + 1, 2);
-  } else {
-    return -1;
-  }
-}
-
-console.log(findNextSquare1(49));
+// console.log(findNextSquare(49));
 
 //--------------------------------------------------------------------------------------------------------------
 
-function findNextSquare2(sq) {
-  return Math.sqrt(sq) % 1 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2);
-}
+// function findNextSquare1(sq) {
+//   const sqrt = Math.sqrt(sq);
 
-console.log(findNextSquare2(49));
+//   if (Number.isInteger(sqrt)) {
+//     return Math.pow(sqrt + 1, 2);
+//   } else {
+//     return -1;
+//   }
+// }
+
+// console.log(findNextSquare1(49));
 
 //--------------------------------------------------------------------------------------------------------------
+
+// function findNextSquare2(sq) {
+//   return Math.sqrt(sq) % 1 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2);
+// }
+
+// console.log(findNextSquare2(49));
+
+//--------------------------------------------------------------------------------------------------------------
+
+function correct(string) {
+  return string.replaceAll('0', 'O').replaceAll('1', 'I').replaceAll('5', 'S');
+}
+
+console.log(correct('L0ND0N'));
+console.log(correct('DUBL1N'));
+console.log(correct('51NGAP0RE'));
+console.log(correct('BUDAPE5T'));
+console.log(correct('PAR15'));
