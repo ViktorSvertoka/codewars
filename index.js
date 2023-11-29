@@ -296,3 +296,43 @@
 // console.log(transactionDescriptions);
 
 //--------------------------------------------------------------------------------------------------------------
+
+function findNextSquare(sq) {
+  let sqer = [];
+  for (let i = 1; i < sq; i += 2) {
+    sqer.push(i);
+    const sumOfNumbers = sqer.reduce((acc, number) => acc + number, 0);
+    if (sumOfNumbers === sq) {
+      const newArr = sqer[sqer.length - 1] + 2;
+
+      return [...sqer, newArr].reduce((acc, number) => acc + number, 0);
+    }
+  }
+  return -1;
+}
+
+console.log(findNextSquare(49));
+
+//--------------------------------------------------------------------------------------------------------------
+
+function findNextSquare1(sq) {
+  const sqrt = Math.sqrt(sq);
+
+  if (Number.isInteger(sqrt)) {
+    return Math.pow(sqrt + 1, 2);
+  } else {
+    return -1;
+  }
+}
+
+console.log(findNextSquare1(49));
+
+//--------------------------------------------------------------------------------------------------------------
+
+function findNextSquare2(sq) {
+  return Math.sqrt(sq) % 1 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2);
+}
+
+console.log(findNextSquare2(49));
+
+//--------------------------------------------------------------------------------------------------------------
