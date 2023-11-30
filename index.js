@@ -297,33 +297,33 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
-You might know some pretty large perfect squares. But what about the NEXT one?
+// You might know some pretty large perfect squares. But what about the NEXT one?
 
-Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
 
-If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+// If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
 
-Examples:(Input --> Output)
+// Examples:(Input --> Output)
 
-121 --> 144
-625 --> 676
-114 -- > -1 since 114 is not a perfect square
+// 121 --> 144
+// 625 --> 676
+// 114 -- > -1 since 114 is not a perfect square
 
-function findNextSquare(sq) {
-  let sqer = [];
-  for (let i = 1; i < sq; i += 2) {
-    sqer.push(i);
-    const sumOfNumbers = sqer.reduce((acc, number) => acc + number, 0);
-    if (sumOfNumbers === sq) {
-      const newArr = sqer[sqer.length - 1] + 2;
+// function findNextSquare(sq) {
+//   let sqer = [];
+//   for (let i = 1; i < sq; i += 2) {
+//     sqer.push(i);
+//     const sumOfNumbers = sqer.reduce((acc, number) => acc + number, 0);
+//     if (sumOfNumbers === sq) {
+//       const newArr = sqer[sqer.length - 1] + 2;
 
-      return [...sqer, newArr].reduce((acc, number) => acc + number, 0);
-    }
-  }
-  return -1;
-}
+//       return [...sqer, newArr].reduce((acc, number) => acc + number, 0);
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(findNextSquare(49));
+// console.log(findNextSquare(49));
 
 //--------------------------------------------------------------------------------------------------------------
 
@@ -358,5 +358,19 @@ console.log(findNextSquare(49));
 // console.log(correct('51NGAP0RE'));
 // console.log(correct('BUDAPE5T'));
 // console.log(correct('PAR15'));
+
+//--------------------------------------------------------------------------------------------------------------
+
+const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
+
+const totalWithdrawalsEuro = transactions
+  .filter(trans => trans < 0)
+  // .map((trans, index, array) => {
+  //   return trans * 0.86;
+  // })
+  .map(trans => trans * 0.86)
+  .reduce((acc, trans) => acc + trans, 0);
+
+console.log(totalWithdrawalsEuro);
 
 //--------------------------------------------------------------------------------------------------------------
