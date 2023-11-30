@@ -381,7 +381,7 @@ const firstDeposit = transactions.find(trans => trans > 0);
 
 const firstWithdrawal = transactions.find(trans => trans < 0);
 
-console.log(firstDeposit);
-console.log(firstWithdrawal);
+console.log(firstDeposit); // 300
+console.log(firstWithdrawal); // -500
 
 //--------------------------------------------------------------------------------------------------------------
