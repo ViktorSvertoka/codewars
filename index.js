@@ -438,12 +438,17 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
-console.log(10 === 10.0);
-console.log(0.1 + 0.2);
-console.log(0.1 + 0.2 === 0.3);
-console.log(Number('11'));
-console.log('11');
-console.log(+'11');
-console.log(Number.parseInt('20%', 10));
-console.log(Number.parseInt('1011%', 2));
-console.log(Number.parseFloat('9.7kg', 2));
+// console.log(10 === 10.0);
+// console.log(0.1 + 0.2);
+// console.log(0.1 + 0.2 === 0.3);
+// console.log(Number('11'));
+// console.log('11');
+// console.log(+'11');
+// console.log(Number.parseInt('20%', 10));
+// console.log(Number.parseInt('1011%', 2));
+// console.log(Number.parseFloat('9.7kg', 2));
+// console.log(Number.isNaN('111'));
+// console.log(Number.isFinite('111'));
+// console.log(Number.isFinite(111));
+
+//--------------------------------------------------------------------------------------------------------------
