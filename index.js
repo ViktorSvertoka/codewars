@@ -375,13 +375,75 @@
 
 //--------------------------------------------------------------------------------------------------------------
 
-const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
+// const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
 
-const firstDeposit = transactions.find(trans => trans > 0);
+// const firstDeposit = transactions.find(trans => trans > 0);
 
-const firstWithdrawal = transactions.find(trans => trans < 0);
+// const firstWithdrawal = transactions.find(trans => trans < 0);
 
-console.log(firstDeposit); // 300
-console.log(firstWithdrawal); // -500
+// console.log(firstDeposit); // 300
+// console.log(firstWithdrawal); // -500
 
 //--------------------------------------------------------------------------------------------------------------
+
+// function plural(n) {
+//   if (n !== 1 && n >= 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function plural(n) {
+//   return n !== 1;
+// }
+
+//--------------------------------------------------------------------------------------------------------------
+
+// var uniqueInOrder = function (iterable) {
+//   let arr = [];
+//   for (let i = 0; i <= iterable.length - 1; i++) {
+//     if (arr[arr.length - 1] !== iterable[i]) {
+//       arr.push(iterable[i]);
+//     }
+//   }
+//   return arr;
+// };
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+
+// var uniqueInOrder = function (iterable) {
+//   return [...iterable].filter((a, i) => a !== iterable[i - 1]);
+// };
+
+//--------------------------------------------------------------------------------------------------------------
+
+// function sumMix(x) {
+//   let acc = 0;
+
+//   for (let i = 0; i <= x.length - 1; i++) {
+//     acc += Number(x[i]);
+//   }
+
+//   return acc;
+// }
+
+// console.log(sumMix([9, 3, '7', '3']));
+
+// function sumMix(x) {
+//   return x.map(a => +a).reduce((a, b) => a + b);
+// }
+
+// console.log(sumMix([9, 3, '7', '3']));
+
+//--------------------------------------------------------------------------------------------------------------
+
+console.log(10 === 10.0);
+console.log(0.1 + 0.2);
+console.log(0.1 + 0.2 === 0.3);
+console.log(Number('11'));
+console.log('11');
+console.log(+'11');
+console.log(Number.parseInt('20%', 10));
+console.log(Number.parseInt('1011%', 2));
+console.log(Number.parseFloat('9.7kg', 2));
