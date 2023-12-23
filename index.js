@@ -465,20 +465,29 @@
 
 // The input will always be made of only lowercase letters and will never be empty.
 
-function wordsToMarks(string) {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
-  let sum = 0;
+// function wordsToMarks(string) {
+//   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//   let sum = 0;
 
-  for (let i = 0; i < string.length; i++) {
-    const char = string[i];
-    const position = alphabet.indexOf(char) + 1;
-    sum += position;
-  }
+//   for (let i = 0; i < string.length; i++) {
+//     const char = string[i];
+//     const position = alphabet.indexOf(char) + 1;
+//     sum += position;
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(wordsToMarks('love')); // Output: 54
-console.log(wordsToMarks('friendship')); // Output: 108
+// console.log(wordsToMarks('love')); // Output: 54
+// console.log(wordsToMarks('friendship')); // Output: 108
+
+//--------------------------------------------------------------------------------------------------------------
+
+// BigInt
+
+// console.log(2 ** 53 - 1);
+// console.log(Number.MAX_SAFE_INTEGER);
+// console.log(typeof 123);
+// console.log(typeof 123n);
 
 //--------------------------------------------------------------------------------------------------------------
